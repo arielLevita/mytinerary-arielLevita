@@ -1,0 +1,43 @@
+.wrapper {
+    perspective: 10px;
+}
+
+.wrapper::-webkit-scrollbar {
+    width: 0;
+}
+
+header {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.sky {
+    transform: translateZ(-50px) scale(6);
+    -webkit-transform: translateZ(-50px) scale(6);
+    -moz-transform: translateZ(-50px) scale(6);
+    -ms-transform: translateZ(-50px) scale(6);
+    -o-transform: translateZ(-50px) scale(6);
+}
+
+.mountains {
+    transform: translateZ(-20px) scale(3);
+    -webkit-transform: translateZ(-20px) scale(3);
+    -moz-transform: translateZ(-20px) scale(3);
+    -ms-transform: translateZ(-20px) scale(3);
+    -o-transform: translateZ(-20px) scale(3);
+}
+
+.trees {
+    transform: translateZ(-5px) scale(1.5);
+}
+
+.sky,
+.mountains,
+.trees {
+    z-index: -1;
+}
+
+.title {
+    text-shadow: 0 0 5px black;
+}
