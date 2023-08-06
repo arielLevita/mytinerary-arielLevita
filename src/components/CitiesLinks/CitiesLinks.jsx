@@ -6,9 +6,11 @@ import './CitiesLinks.css'
 const CitiesLinks = ({name, coverURL}) => {
     return (
         <div 
-            className='h-full bg-cover bg-center bg-no-repeat text-6xl text-center text-cyan-50 text-shadow flex justify-center items-center'
+            className='w-full h-full bg-cover bg-center bg-no-repeat flex justify-center items-center relative'
             style={{backgroundImage: `url(${coverURL})`}} 
-        >{name}
+        >
+            <div className='absolute w-full h-full bg-black opacity-20'></div>
+            <div className='absolute w-full h-full flex justify-center items-center text-6xl text-center text-cyan-50 text-shadow'>{name}</div>
         </div>
     )
 }
