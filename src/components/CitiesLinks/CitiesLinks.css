@@ -1,0 +1,7 @@
+.swiper-slide {
+    height: calc((100%) / 2) !important;
+    
+}
+.text-shadow {
+    text-shadow: 0 0 3px black;
+}
