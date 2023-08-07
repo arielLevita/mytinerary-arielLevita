@@ -8,11 +8,11 @@
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-    color: white;
+    color: #fff;
 }
 
 .swiper-pagination-bullet {
-    border: 2px solid white;
+    border: 2px solid #fff;
     width: 10px;
     aspect-ratio: 1/1;
 }

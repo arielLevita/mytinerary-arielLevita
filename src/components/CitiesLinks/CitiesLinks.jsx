@@ -10,7 +10,7 @@ const CitiesLinks = ({name, coverURL}) => {
             style={{backgroundImage: `url(${coverURL})`}} 
         >
             <div className='absolute w-full h-full bg-black opacity-20'></div>
-            <div className='absolute w-full h-full flex justify-center items-center text-6xl text-center text-cyan-50 text-shadow'>{name}</div>
+            <div className='absolute w-full h-full flex justify-center items-center text-center text-shadow'>{name}</div>
         </div>
     )
 }

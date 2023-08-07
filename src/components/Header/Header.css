@@ -1,44 +1,85 @@
-.wrapper {
-    perspective: 10px;
+.img-cover {
+    background: url('https://i.postimg.cc/SNGMTM0Z/cover-beach.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    aspect-ratio: 16/9;
+    display: grid;
+    grid-template-areas: "hero .";
 }
 
-.wrapper::-webkit-scrollbar {
-    width: 0;
+.hero {
+    grid-area: hero;
+    margin-top: 10rem;
 }
 
-header {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    z-index: -1;
-    max-height: 100vh;
+header h1,
+header p {
+    color: #fff;
+    text-shadow: 0 0 3px #000;
 }
 
-.sky {
-    transform: translateZ(-50px) scale(6);
-    -webkit-transform: translateZ(-50px) scale(6);
-    -moz-transform: translateZ(-50px) scale(6);
-    -ms-transform: translateZ(-50px) scale(6);
-    -o-transform: translateZ(-50px) scale(6);
+header h1 {
+    font-size: 80px;
 }
 
-.mountains {
-    transform: translateZ(-20px) scale(3);
-    -webkit-transform: translateZ(-20px) scale(3);
-    -moz-transform: translateZ(-20px) scale(3);
-    -ms-transform: translateZ(-20px) scale(3);
-    -o-transform: translateZ(-20px) scale(3);
+header p {
+    font-size: 20px;
 }
 
-.trees {
-    transform: translateZ(-5px) scale(1.5);
+header p:first-child {
+    font-size: 30px;
 }
 
-.sky,
-.mountains,
-.trees {
-    z-index: -1;
+header button {
+    font-size: 1.5rem;
+    margin: 1.25rem 0;
+    padding: 0.25rem 1rem 0.5rem 1rem;
 }
 
-.title {
-    text-shadow: 0 0 5px black;
+@media (max-width:1000px) {
+    .hero {
+        margin-top: 4rem;
+    }
+
+    header h1 {
+        font-size: 50px;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    header p:first-child {
+        font-size: 1.5rem;
+    }
+
+    header button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:650px) {
+    .hero {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+    
+    header p {
+        font-size: 0.75rem;
+    }
+    
+    header p:first-child {
+        font-size: 1rem;
+    }
+
+    header button {
+        font-size: 0.75rem;
+        margin: 0.75rem 0
+    }
 }

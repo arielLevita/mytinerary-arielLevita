@@ -1,16 +1,16 @@
-import './App.css'
-import  Main  from './layouts/Main'
+import Main from './layouts/Main'
 import Header from './components/Header/Header'
-import Carousel from './components/Carousel/Carousel';
+import Destinations from './components/Destinations/Destinations'
+
+import './App.css'
 
 function App() {
-
   return (
     <>
       <Main>
         <Header />
-        <main>
-            <Carousel />
+        <main className='bg-purple-50'>
+          <Destinations />
         </main>
       </Main>
     </>
