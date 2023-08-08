@@ -5,7 +5,7 @@ const Footer = () => {
                 <div className="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
                     <div className="flex flex-wrap items-center justify-between md:flex-nowrap">
                         <div className="w-full space-x-12 flex justify-center text-gray-300 sm:w-7/12 md:justify-start">
-                            <ul className="list-disc list-inside space-y-8">
+                            <ul className="list-none list-inside space-y-8">
                                 <li><a href="#" className="hover:text-sky-400 transition">Home</a></li>
                                 <li><a href="#" className="hover:text-sky-400 transition">Cities</a></li>
                                 <li><a href="#" className="hover:text-sky-400 transition">Stays</a></li>
