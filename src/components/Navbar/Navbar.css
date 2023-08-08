@@ -1,0 +1,23 @@
+.navbar {
+    position: sticky;
+    top: 0;
+}
+
+.menuBtn {
+    display: none;
+}
+
+svg {
+    fill: #fff;
+    height: 1.5em;
+}
+
+@media (max-width:700px) {
+    .menuBtn {
+        display:inline-flex;
+    }
+
+    .navMenu {
+        display: none;
+    }
+}
