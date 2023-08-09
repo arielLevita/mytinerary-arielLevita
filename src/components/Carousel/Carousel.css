@@ -1,9 +1,3 @@
-.mySwiper {
-    width: 100%;
-    height: auto;
-    background-color: red;
-}
-
 .swiper-button-prev::after,
 .swiper-button-next::after {
     color: #fff;

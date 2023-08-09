@@ -51,7 +51,7 @@ const Carousel = () => {
                 clickable: true,
             }}
             modules={[Autoplay, Navigation, A11y, Grid, Pagination]}
-            className="mySwiper max-h-screen cHeight"
+            className="mySwiper w-full h-auto max-h-screen cHeight"
         >
             {cities.map((city) => (
                 <SwiperSlide key={city.key}>
