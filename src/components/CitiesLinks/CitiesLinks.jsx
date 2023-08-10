@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './CitiesLinks.css'
+import './CitiesLinks.css';
 
 
 const CitiesLinks = ({name, coverURL}) => {

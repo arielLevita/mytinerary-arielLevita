@@ -56,6 +56,7 @@ header button {
     
     header p {
         font-size: 3.5vw;
+        max-width: 70%;
     }
     
     header p:first-child {
@@ -71,5 +72,11 @@ header button {
         font-size: 3.5vw;
         margin: 1vw 0;
         padding: 0.5vw 1.5vw 1vw 1.5vw;
+    }
+}
+
+@media (max-width:575px) {
+    .img-cover {
+        height: 100vh;
     }
 }

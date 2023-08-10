@@ -1,20 +1,15 @@
-import PropTypes from 'prop-types';
+import { Outlet } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
-
-const Main = ({children}) => {
+const Main = () => {
     return (
         <>
             <Navbar />
-            {children}
+                <Outlet />
             <Footer />
         </>
     )
 }
-
-Main.propTypes = {
-    children: PropTypes.any.isRequired,
-};
 
 export default Main

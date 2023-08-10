@@ -1,4 +1,3 @@
-
 import Carousel from '../Carousel/Carousel';
 
 const Destinations = () => {
