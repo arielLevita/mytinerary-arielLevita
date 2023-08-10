@@ -1,16 +1,23 @@
+import NavbarLinks from '../NavbarLinks/NavbarLinks';
+
 const Footer = () => {
+
+    const links = [
+        { key: 1, title: 'Home', to: '/' },
+        { key: 2, title: 'Cities', to: '/cities' },
+        { key: 3, title: 'Stays', to: '/stays' },
+        { key: 4, title: 'Car rentals', to: '/car-rentals' }
+    ]
+
     return (
         <footer className="relative py-10 flex flex-col items-center bg-cyan-900 overflow-hidden md:py-20">
             <div className="relative z-[1] container m-auto px-6 md:px-12">
                 <div className="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
                     <div className="flex flex-wrap items-center justify-between md:flex-nowrap">
                         <div className="w-full space-x-12 flex justify-center text-gray-300 sm:w-7/12 md:justify-start">
-                            <ul className="list-none list-inside space-y-8">
-                                <li><a href="#" className="hover:text-sky-400 transition">Home</a></li>
-                                <li><a href="#" className="hover:text-sky-400 transition">Cities</a></li>
-                                <li><a href="#" className="hover:text-sky-400 transition">Stays</a></li>
-                                <li><a href="#" className="hover:text-sky-400 transition">Car rental</a></li>
-                            </ul>
+                            <div className="list-none list-inside space-y-8 flex flex-col">
+                                {links.map((link) => (<NavbarLinks key={link.key} title={link.title} to={link.to} />))}
+                            </div>
 
                             <ul role="list" className="space-y-8">
                                 <li>
