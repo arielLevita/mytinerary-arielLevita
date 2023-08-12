@@ -37,6 +37,7 @@ const Carousel = () => {
     return (
         <Swiper
             slidesPerView={2}
+            slidesPerGroup={2}
             navigation
             grid={{
                 rows: 2,
