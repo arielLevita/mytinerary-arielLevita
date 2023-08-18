@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import NavbarMenu from '../NavbarMenu/NavbarMenu';
-import IconThreeDots from '../IconThreeDots/IconThreeDots';
-import IconXMark from '../IconXMark/IconXMark';
+import IconThreeDots from '../Icons/IconThreeDots/IconThreeDots';
+import IconXMark from '../Icons/IconXMark/IconXMark';
 
 import './Navbar.css';
 
