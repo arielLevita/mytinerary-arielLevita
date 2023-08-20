@@ -14,17 +14,17 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar top-0 sticky z-50 inline-flex bg-gradient-to-r from-blue-400 bg-cyan-700 p-2 w-full">
+    <nav className="navbar top-0 fixed z-50 inline-flex bg-gradient-to-r from-blue-400 bg-cyan-700 p-2 w-full">
       <div className='me-auto'>
         <img className='h-8 mx-4 aspect-square inline-block' src="https://i.postimg.cc/QMYfcPkT/mytinerary-logo.png" alt="logo" />
         <span className='text-white font-semibold'>MyTinerary</span>
       </div>
 
-      <div className='navMenu'>
+      <div className='navMenu hidden sm:inline'>
         <NavbarMenu />
       </div>
       {show ? <NavbarMenu /> : null}
-      <button className='menuBtn w-6 justify-center items-center' onClick={handleShowMenu}>
+      <button className='menuBtn inline-flex sm:hidden w-6 justify-center items-center' onClick={handleShowMenu}>
         {show ? <IconXMark /> : <IconThreeDots />}
       </button>
     </nav>

@@ -1,15 +1,7 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination, A11y, Grid } from 'swiper/modules';
-import CitiesLinks from '../CitiesLinks/CitiesLinks';
+import CitiesLinks from "../CitiesLinks/CitiesLinks";
+import './CitiesCards.css'
 
-import './Carousel.css'
-import 'swiper/css';
-import 'swiper/css/a11y';
-import 'swiper/css/grid';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-const Carousel = () => {
+const CitiesCards = () => {
 
     const cities = [
         {key: 1, name: 'Rome', coverURL: 'https://i.postimg.cc/28nkMjKB/rome.jpg', country: 'Italy'},
@@ -35,33 +27,14 @@ const Carousel = () => {
     ];
 
     return (
-        <Swiper
-            slidesPerView={2}
-            slidesPerGroup={2}
-            navigation
-            grid={{
-                rows: 2,
-            }}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-            spaceBetween={0}
-            pagination={{
-                a11y: true,
-                clickable: true,
-            }}
-            modules={[Autoplay, Navigation, A11y, Grid, Pagination]}
-            className="mySwiper w-full h-auto max-h-screen cHeight"
-        >
-            {cities.map((city) => (
-                <SwiperSlide key={city.key}>
-                    <CitiesLinks name={city.name} coverURL={city.coverURL}/>
-                </SwiperSlide>
-            )).slice(0, 12)}
+        <div className="w-full h-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
             
-        </Swiper>
+            {cities.map((city) => (
+                    <CitiesLinks key={city.key} name={city.name} coverURL={city.coverURL}/>
+            )).slice(0, 15)}
+
+        </div>
     )
 }
 
-export default Carousel
+export default CitiesCards

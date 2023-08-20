@@ -2,81 +2,8 @@
     background: url('https://i.postimg.cc/SNGMTM0Z/cover-beach.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    aspect-ratio: 16/9;
 }
 
 .hero {
-    top: 20%;
-    left: 8%;
-}
-
-header h1,
-header p {
-    color: #fff;
     text-shadow: 0 0 3px #000;
-}
-
-header h1 {
-    font-size: 6vw;
-}
-
-header p {
-    font-size: 1.75vw;
-}
-
-header p:first-child {
-    font-size: 2.5vw;
-    -webkit-transform: translateY(2vw);
-    -moz-transform: translateY(2vw);
-    -ms-transform: translateY(2vw);
-    -o-transform: translateY(2vw);
-    transform: translateY(2vw);
-}
-
-header button {
-    font-size: 1.75vw;
-    margin: 1vw 0;
-    padding: 0.25vw 0.75vw 0.5vw 0.75vw;
-}
-
-@media (max-width:767px) {
-    .img-cover {
-        background-size: cover;
-    }
-
-    .hero {
-        top: 10%;
-        left: 8%;
-        right: 8%;
-    }
-    
-    header h1 {
-        font-size: 12vw;
-    }
-    
-    header p {
-        font-size: 3.5vw;
-        max-width: 70%;
-    }
-    
-    header p:first-child {
-        font-size: 5vw;
-        transform: translateY(4vw);
-        -webkit-transform: translateY(4vw);
-        -moz-transform: translateY(4vw);
-        -ms-transform: translateY(4vw);
-        -o-transform: translateY(4vw);
-}
-    
-    header button {
-        font-size: 3.5vw;
-        margin: 1vw 0;
-        padding: 0.5vw 1.5vw 1vw 1.5vw;
-    }
-}
-
-@media (max-width:575px) {
-    .img-cover {
-        height: 100vh;
-    }
 }

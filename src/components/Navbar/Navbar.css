@@ -1,13 +1,13 @@
-.menuBtn {
+/* .menuBtn {
     display: none;
-}
+} */
 
 svg {
     fill: #fff;
     height: 1.5em;
 }
 
-@media (max-width:700px) {
+/* @media (max-width:700px) {
     .menuBtn {
         display:inline-flex;
     }
@@ -15,4 +15,4 @@ svg {
     .navMenu {
         display: none;
     }
-}
+} */

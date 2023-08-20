@@ -1,3 +1,8 @@
+.swiper-slide {
+    height: calc((100%) / 2) !important;
+    
+}
+
 .swiper-button-prev::after,
 .swiper-button-next::after {
     color: #fff;
@@ -11,4 +16,16 @@
 
 .cHeight {
     aspect-ratio: 3/2;
+}
+
+.text-shadow {
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    font-size: 3rem;
+}
+
+@media (max-width:500px) {
+    .text-shadow {
+        font-size: 1.5rem;
+    }
 }

@@ -5,7 +5,7 @@ const SearchBox = () => {
     const [search, setSearch] = useState(''); // Use state to manage search input
 
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center my-4">
             <div className="flex items-center max-w-md mx-auto bg-white border border-gray-300 rounded-lg">
                 <div className="w-full">
                     <input
@@ -19,7 +19,7 @@ const SearchBox = () => {
                 <div>
                     <button
                         type="submit"
-                        className={`flex items-center justify-center w-12 h-12 text-white rounded-r-lg ${search.length > 0 ? 'bg-cyan-700' : 'bg-gray-500 cursor-not-allowed'}`}
+                        className={`flex items-center justify-center w-12 h-12 text-white rounded-r-lg ${search.length > 0 ? 'bg-gradient-to-r from-purple-500 bg-purple-400 hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700' : 'bg-gray-500 cursor-not-allowed'}`}
                         disabled={search.length === 0}
                     >
                         <IconMagnifyingGlass />
