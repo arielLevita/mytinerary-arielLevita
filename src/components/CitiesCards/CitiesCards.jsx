@@ -1,39 +1,64 @@
-import CitiesLinks from "../CitiesLinks/CitiesLinks";
+/* eslint-disable react/jsx-key */
+import { useEffect, useState } from "react";
+import axios from "axios";
+import CityCard from "../CityCard/CityCard.jsx";
+import IconMagnifyingGlass from '../Icons/IconMagnifyingGlass/IconMagnifyingGlass';
+import HandleNotFound from "../HandleNotFound/HandleNotFound.jsx";
 import './CitiesCards.css'
 
 const CitiesCards = () => {
 
-    const cities = [
-        {key: 1, name: 'Rome', coverURL: 'https://i.postimg.cc/28nkMjKB/rome.jpg', country: 'Italy'},
-        {key: 2, name: 'Athens', coverURL: 'https://i.postimg.cc/k5v74jmM/athens.jpg', country: 'Greece'},
-        {key: 3, name: 'Barcelona', coverURL: 'https://i.postimg.cc/3Rb54Vbh/barcelona.jpg', country: 'Spain'},
-        {key: 4, name: 'Paris', coverURL: 'https://i.postimg.cc/FzJqfRLb/paris.jpg', country: 'France'},
-        {key: 5, name: 'Beijing', coverURL: 'https://i.postimg.cc/nrgJ5gv2/beijing.jpg', country: 'China'},
-        {key: 6, name: 'Reikiavik', coverURL: 'https://i.postimg.cc/QN2NfK03/reikiavik.jpg', country: 'Iceland'},
-        {key: 7, name: 'Dubai', coverURL: 'https://i.postimg.cc/908MfLyw/dubai.jpg', country: 'United Arab Emirates'},
-        {key: 8, name: 'London', coverURL: 'https://i.postimg.cc/sDGySfrN/london.jpg', country: 'England'},
-        {key: 9, name: 'Moscow', coverURL: 'https://i.postimg.cc/QC9LpmRT/moscow.jpg', country: 'Russia'},
-        {key: 10, name: 'Pisa', coverURL: 'https://i.postimg.cc/NLqnRc63/pisa.jpg', country: 'Italy'},
-        {key: 11, name: 'New York', coverURL: 'https://i.postimg.cc/ZqHhZC8C/new-york.jpg', country: 'United States of America'},
-        {key: 12, name: 'Tokio', coverURL: 'https://i.postimg.cc/dVBqQHvs/tokio.jpg', country: 'Japan'},
-        {key: 13, name: 'Sydeney', coverURL: 'https://i.postimg.cc/wxyT5Q52/sydney.jpg', country: 'Australia'},
-        {key: 14, name: 'Petra', coverURL: 'https://i.postimg.cc/NFW3bTcP/petra.jpg', country: 'Jordan'},
-        {key: 15, name: 'Rio do Janeiro', coverURL: 'https://i.postimg.cc/x1Yf2rwp/rio-de-janeiro.jpg', country: 'Brazil'},
-        {key: 16, name: 'Iguazú', coverURL: 'https://i.postimg.cc/N06jXs1c/iguazu.jpg', country: 'Argentine'},
-        {key: 17, name: 'Agra', coverURL: 'https://i.postimg.cc/t4Pq0qvx/agra.jpg', country: 'India'},
-        {key: 18, name: 'Las vegas', coverURL: 'https://i.postimg.cc/HkGmtGWs/las-vegas.jpg', country: 'United States of America'},
-        {key: 19, name: 'Cairo', coverURL: 'https://i.postimg.cc/02hkHMnv/cairo.jpg', country: 'Egipt'},
-        {key: 20, name: 'Alesund', coverURL: 'https://i.postimg.cc/XvbV4RtD/alesund.jpg', country: 'Norway'},
-    ];
+    const [cities, setCities] = useState();
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/api/cities')
+            .then(response => setCities(response.data.cities))
+            .catch(err => console.log(err))
+    }, []);
+
+    const handleInputChange = async (city) =>{
+        try{
+            await axios.get(`http://localhost:3000/api/cities?name=${city.target.value}`)
+            .then((res)=>setCities(res.data.cities)) 
+        }catch (error){
+            console.log(error)
+            setCities([]);
+        }
+    }
 
     return (
-        <div className="w-full h-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
-            
-            {cities.map((city) => (
-                    <CitiesLinks key={city.key} name={city.name} coverURL={city.coverURL}/>
-            )).slice(0, 15)}
+        <>
+            <div className="flex items-center justify-center my-4">
+                <div className="flex items-center max-w-md mx-auto bg-white border border-gray-300 rounded-lg">
+                    <div className="w-full">
+                        <input
+                            type="search"
+                            className="w-full px-4 py-1 text-gray-800 rounded-full focus:outline-none"
+                            placeholder="search"
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div>
+                        <button
+                            type="submit"
+                            className='flex items-center justify-center w-8 h-8 text-white rounded-r-lg bg-gradient-to-r from-purple-500 bg-purple-400 hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700'>
+                            <IconMagnifyingGlass />
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        </div>
+            <div className="w-full h-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 p-4">
+
+                {
+                    cities?.length > 0
+                    ? cities?.map((city) => (
+                            <CityCard key={city._id} _id={city._id} name={city.name} coverURL={city.coverURL}/>
+                    )).slice(0, 15)
+                    : <HandleNotFound />
+                }
+            </div>
+        </>
     )
 }
 

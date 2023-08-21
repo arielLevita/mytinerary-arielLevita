@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 
-// import './CitiesLinks.css';
-
-
-const CitiesLinks = ({name, coverURL}) => {
+const CarouselLinks = ({name, coverURL}) => {
     return (
         <div 
             className='card-body w-full h-full bg-cover bg-center bg-no-repeat flex justify-center items-center relative'
@@ -15,9 +12,9 @@ const CitiesLinks = ({name, coverURL}) => {
     )
 }
 
-CitiesLinks.propTypes = {
+CarouselLinks.propTypes = {
     name: PropTypes.string.isRequired,
     coverURL: PropTypes.string.isRequired,
 };
 
-export default CitiesLinks
+export default CarouselLinks

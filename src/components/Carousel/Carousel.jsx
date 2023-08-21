@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, A11y, Grid } from 'swiper/modules';
-import CitiesLinks from '../CitiesLinks/CitiesLinks';
+import CarouselLinks from '../CarouselLinks/CarouselLinks';
 
 import './Carousel.css'
 import 'swiper/css';
@@ -56,7 +56,7 @@ const Carousel = () => {
         >
             {cities.map((city) => (
                 <SwiperSlide key={city.key}>
-                    <CitiesLinks name={city.name} coverURL={city.coverURL}/>
+                    <CarouselLinks name={city.name} coverURL={city.coverURL}/>
                 </SwiperSlide>
             )).slice(0, 12)}
             

@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../layouts/Main";
-import Home from "../pages/Home";
-import Cities from "../pages/Cities";
+import Main from "../layouts/Main.jsx";
+import Home from "../pages/Home.jsx";
+import Cities from "../pages/Cities.jsx";
+import CityDetails from "../components/CityDetails/CityDetails.jsx";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: '/car-rentals',
                 element: <Cities />
+            },
+            {
+                path: '/cities/:id',
+                element: <CityDetails />
             }
         ]
     },
