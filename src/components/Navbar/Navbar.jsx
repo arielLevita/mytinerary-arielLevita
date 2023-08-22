@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="navbar top-0 fixed z-50 inline-flex bg-gradient-to-r from-blue-400 bg-cyan-700 p-2 w-full">
       <div className='me-auto'>
         <img className='h-8 mx-4 aspect-square inline-block' src="https://i.postimg.cc/QMYfcPkT/mytinerary-logo.png" alt="logo" />
-        <span className='text-white font-semibold'>MyTinerary</span>
+        <span className='text-white text-lg font-semibold text-shadow'>MyTinerary</span>
       </div>
 
       <div className='navMenu hidden sm:inline'>

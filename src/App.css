@@ -9,3 +9,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(0deg, rgb(163, 76, 163), rgb(85, 38, 85));
 }
+
+.text-shadow {
+    text-shadow: 0 0 3px #000;
+}

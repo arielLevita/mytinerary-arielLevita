@@ -7,7 +7,7 @@ const CarouselLinks = ({name, coverURL}) => {
             style={{backgroundImage: `url(${coverURL})`}} 
         >
             <div className='absolute w-full h-full bg-black opacity-20'></div>
-            <div className='absolute w-full h-full flex justify-center items-center text-center text-shadow'>{name}</div>
+            <div className='absolute w-full h-full flex justify-center items-center text-white text-2xl sm:text-4xl md:text-5xl text-center text-shadow'>{name}</div>
         </div>
     )
 }

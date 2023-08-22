@@ -56,7 +56,7 @@ const Footer = () => {
 
                             </ul>
                         </div>
-                        <div className="w-10/12 m-auto  mt-16 space-y-6 text-center sm:text-left sm:w-5/12 sm:mt-auto">
+                        <div className="w-10/12 m-auto  mt-16 space-y-6 text-center sm:w-5/12 sm:mt-auto">
                             <span className="block text-gray-300">Find your perfect trip, designed by insiders who know and love their cities.</span>
 
                             <span className="block text-gray-300">Ariel Levita &copy; 2023</span>

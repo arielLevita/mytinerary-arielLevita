@@ -15,7 +15,7 @@
         width: 95vw;
         z-index: 5;
         padding: 1rem 0;
-        background: rgba( 74, 144, 226, 0.5 );
+        background: rgba(25, 64, 109, 0.7);
         box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
         backdrop-filter: blur( 3px );
         -webkit-backdrop-filter: blur( 3px );
