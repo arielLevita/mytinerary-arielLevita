@@ -3,6 +3,7 @@ import Main from "../layouts/Main.jsx";
 import Home from "../pages/Home.jsx";
 import Cities from "../pages/Cities.jsx";
 import CityDetails from "../components/CityDetails/CityDetails.jsx";
+import LogIn from "../components/LogIn/LogIn.jsx";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/cities/:id',
                 element: <CityDetails />
+            },
+            {
+                path: '/login',
+                element: <LogIn />
             }
         ]
     },

@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import CityCard from "../CityCard/CityCard.jsx";
 import IconMagnifyingGlass from '../Icons/IconMagnifyingGlass/IconMagnifyingGlass';
@@ -10,19 +10,28 @@ const CitiesCards = () => {
 
     const [cities, setCities] = useState();
 
+    let inputSearch = useRef();
+
     useEffect(() => {
         axios.get('http://localhost:3000/api/cities')
             .then(response => setCities(response.data.cities))
             .catch(err => console.log(err))
     }, []);
 
-    const handleInputChange = async (city) =>{
+    const handleSearch = async () =>{
+
+        const name = inputSearch.current.value;
+
         try{
-            await axios.get(`http://localhost:3000/api/cities?name=${city.target.value}`)
-            .then((res)=>setCities(res.data.cities)) 
+            const response = await axios.get(`http://localhost:3000/api/cities?name=${name}`)
+            setCities(response.data.cities);
         }catch (error){
-            console.log(error)
-            setCities([]);
+            if(error.response.status === 404) {
+                console.log('City not found');
+                setCities([]);
+            } else {
+                console.log(error)
+            }
         }
     }
 
@@ -32,14 +41,15 @@ const CitiesCards = () => {
                 <div className="flex items-center max-w-md mx-auto bg-white border border-gray-300 rounded-lg">
                     <div className="w-full">
                         <input
+                            ref={inputSearch}
                             type="search"
                             className="w-full px-4 py-1 text-gray-800 rounded-full focus:outline-none"
                             placeholder="search"
-                            onChange={handleInputChange}
                         />
                     </div>
                     <div>
                         <button
+                            onClick={handleSearch}
                             type="submit"
                             className='flex items-center justify-center w-8 h-8 text-white rounded-r-lg bg-gradient-to-r from-purple-500 bg-purple-400 hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700'>
                             <IconMagnifyingGlass />
@@ -52,9 +62,9 @@ const CitiesCards = () => {
 
                 {
                     cities?.length > 0
-                    ? cities?.map((city) => (
+                    ? cities?.slice(0, 15).map((city) => (
                             <CityCard key={city._id} _id={city._id} name={city.name} coverURL={city.coverURL}/>
-                    )).slice(0, 15)
+                    ))
                     : <HandleNotFound />
                 }
             </div>

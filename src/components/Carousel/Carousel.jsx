@@ -41,11 +41,11 @@ const Carousel = () => {
             modules={[Autoplay, Navigation, A11y, Grid, Pagination]}
             className="mySwiper w-full h-auto max-h-screen cHeight"
         >
-            {cities?.map((city) => (
-                <SwiperSlide key={city.key}>
+            {cities?.slice(0, 12).map((city) => (
+                <SwiperSlide key={city._id}>
                     <CarouselLinks name={city.name} coverURL={city.coverURL}/>
                 </SwiperSlide>
-            )).slice(0, 12)}
+            ))}
             
         </Swiper>
     )

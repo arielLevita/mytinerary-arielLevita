@@ -2,17 +2,7 @@
     display: none;
 } */
 
-svg {
+nav svg {
     fill: #fff;
     height: 1.5em;
 }
-
-/* @media (max-width:700px) {
-    .menuBtn {
-        display:inline-flex;
-    }
-
-    .navMenu {
-        display: none;
-    }
-} */
