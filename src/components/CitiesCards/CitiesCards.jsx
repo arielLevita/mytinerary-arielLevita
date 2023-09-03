@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
-import { useEffect, useState, useRef } from "react";
-import axios from "axios";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { filter_cities, get_cities } from "../../store/actions/cityActions.js";
 import CityCard from "../CityCard/CityCard.jsx";
 import IconMagnifyingGlass from '../Icons/IconMagnifyingGlass/IconMagnifyingGlass';
 import HandleNotFound from "../HandleNotFound/HandleNotFound.jsx";
@@ -8,31 +9,20 @@ import './CitiesCards.css'
 
 const CitiesCards = () => {
 
-    const [cities, setCities] = useState();
+    const cities = useSelector((store) => store.cityReducer.cities);
+
+    const dispatch = useDispatch();
 
     let inputSearch = useRef();
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/cities')
-            .then(response => setCities(response.data.cities))
-            .catch(err => console.log(err))
-    }, []);
+        dispatch(get_cities())
+    }, [dispatch]);
 
-    const handleSearch = async () =>{
-
-        const name = inputSearch.current.value;
-
-        try{
-            const response = await axios.get(`http://localhost:3000/api/cities?name=${name}`)
-            setCities(response.data.cities);
-        }catch (error){
-            if(error.response.status === 404) {
-                console.log('City not found');
-                setCities([]);
-            } else {
-                console.log(error)
-            }
-        }
+    const handleSearch = () => {
+            dispatch(filter_cities({
+                name: inputSearch.current.value
+            }))
     }
 
     return (

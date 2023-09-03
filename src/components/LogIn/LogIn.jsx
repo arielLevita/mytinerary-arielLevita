@@ -1,7 +1,20 @@
+import { useDispatch } from "react-redux";
+import { user_photo } from "../../store/actions/userActions";
 import IconArrowIn from "../Icons/IconArrowIn/IconArrowIn";
 import IconTargetBlank from "../Icons/IconTargetBlank/IconTargetBlank";
 
 const LogIn = () => {
+
+    const dispatch = useDispatch();
+
+    const handleLogIn = () => {
+        const user = {
+            photo: 'https://i.postimg.cc/9Fm570dt/hans-gruber.jpg'
+        }
+
+        dispatch(user_photo(user));
+    }
+
     return (
         // <div className="bg-purple-100 bg-gradient-to-r from-purple-200 py-16">
         <div className="img-cover">
@@ -36,7 +49,7 @@ const LogIn = () => {
                                     <a href="#" className="font-medium text-purple-600">Forgot Password?</a>
                                 </div>
                             </div>
-                            <button className="w-full py-3 font-medium text-white bg-purple-600 hover:bg-purple-500 rounded-full border-purple-500 hover:shadow inline-flex space-x-2 items-center justify-center">
+                            <button onClick={handleLogIn} className="w-full py-3 font-medium text-white bg-purple-600 hover:bg-purple-500 rounded-full border-purple-500 hover:shadow inline-flex space-x-2 items-center justify-center">
                                 <IconArrowIn />
                                 <span>Login</span>
                             </button>

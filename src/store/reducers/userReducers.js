@@ -2,8 +2,8 @@ import { createReducer } from "@reduxjs/toolkit";
 import { user_photo } from "../actions/userActions";
 
 const initialState = {
-    name: 'Ariel',
-    photo: 'https://i.postimg.cc/d38HCtFp/IMG-20191225-013617178-edited.jpg',
+    name: 'default',
+    photo: 'https://i.postimg.cc/yN3xNK4z/default-avatar.png',
 }
 
 const userReducer = createReducer(initialState,

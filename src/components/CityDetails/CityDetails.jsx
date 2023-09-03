@@ -2,6 +2,7 @@
 import { useParams, Link as Anchor } from "react-router-dom"
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ItineraryBox from "../ItineraryBox/ItineraryBox";
 
 const citiesDetails = () => {
 
@@ -22,6 +23,13 @@ const citiesDetails = () => {
             <div className='w-full h-72 bg-cover bg-center bg-no-repeat flex justify-center items-center relative' style={{backgroundImage: `url(${cities?.coverURL})`}} >
                 <div className='absolute w-full h-full bg-black opacity-20'></div>
                 <div className='absolute w-full h-full flex justify-center items-center text-white text-center font-semibold text-5xl md:text-7xl lg:text-8xl text-shadow'>{cities?.name}</div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
+                <ItineraryBox />
+                <ItineraryBox />
+                <ItineraryBox />
+                <ItineraryBox />
             </div>
 
             <img src="https://i.postimg.cc/3RNDjW4Q/Under-Construction-Transparent.png" alt="web site under construction" className="max-w-xs aspect-square my-24" />
