@@ -1,8 +1,9 @@
+import { Link as Anchor } from "react-router-dom"
 import IconHeart from "../Icons/IconHeart/IconHeart"
 import ItineraryPrice from "../ItineraryPrice/ItineraryPrice"
 
 
-const ItineraryBox = ({name, coverURL, duration, price, userName, userPhoto}) => {
+const ItineraryBox = ({_id, name, coverURL, duration, price, userName, userPhoto}) => {
     return (
         <div className="flex flex-col sm:flex-row mx-auto bg-purple-50 text-slate-800 p-2 rounded-xl shadow shadow-slate-400">
             <img src={coverURL} alt="" className="sm:w-1/2 rounded-lg" />
@@ -28,9 +29,9 @@ const ItineraryBox = ({name, coverURL, duration, price, userName, userPhoto}) =>
                             </button>
                         </div>
                     </div>
-                    <button className="w-full h-full text-purple-700 uppercase text-right font-bold">
+                    <Anchor className="w-full h-full text-purple-700 uppercase text-right font-bold" to={`/itineraries/${_id}`}>
                         + view more
-                    </button>
+                    </Anchor>
                 </div>
             </div>
 

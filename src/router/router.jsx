@@ -4,6 +4,7 @@ import Home from "../pages/Home.jsx";
 import Cities from "../pages/Cities.jsx";
 import CityDetails from "../components/CityDetails/CityDetails.jsx";
 import LogIn from "../components/LogIn/LogIn.jsx";
+import UnderConstruction from "../components/UnderConstruction/UnderConstruction.jsx";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: '/cities/:id',
                 element: <CityDetails />
+            },
+            {
+                path: '/itineraries/:id',
+                element: <UnderConstruction />
             },
             {
                 path: '/login',

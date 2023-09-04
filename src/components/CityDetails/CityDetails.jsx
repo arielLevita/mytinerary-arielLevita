@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useParams, Link as Anchor } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCityById } from "../../store/actions/cityActions.js";
 import { getItinerariesByCityId } from "../../store/actions/itineraryActions.js";
 import ItineraryBox from "../ItineraryBox/ItineraryBox";
 import HandleNotFound from "../HandleNotFound/HandleNotFound.jsx";
+import GoBackButton from "../GoBackButton/GoBackButton.jsx";
 
 const citiesDetails = () => {
 
@@ -43,8 +44,7 @@ const citiesDetails = () => {
                 }
             </div>
 
-            {/* <img src="https://i.postimg.cc/3RNDjW4Q/Under-Construction-Transparent.png" alt="web site under construction" className="max-w-xs aspect-square my-24" /> */}
-            <Anchor to='/cities' className='bg-purple-700 shadow-sm font-semibold text-base md:text-xl text-white rounded-full hover:shadow-2xl hover:bg-purple-900 border-2 border-opacity-50 border-white pt-1.5 pb-2 px-3 my-4'> Go back </Anchor>
+            <GoBackButton />
         </div>
     )
 }
