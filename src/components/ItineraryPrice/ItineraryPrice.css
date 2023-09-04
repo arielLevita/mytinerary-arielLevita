@@ -1,0 +1,14 @@
+.coin-price {
+    display: inline-block;
+}
+
+.coin {
+    font-size: 16px;
+    color: gray;
+    margin: 0 0.125rem;
+    font-weight: 600;
+}
+
+.coin.filled {
+    color: green;
+}
