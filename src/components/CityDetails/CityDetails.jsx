@@ -1,28 +1,29 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useParams, Link as Anchor } from "react-router-dom"
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useParams, Link as Anchor } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCityById } from "../../store/actions/cityActions.js";
 import ItineraryBox from "../ItineraryBox/ItineraryBox";
 
 const citiesDetails = () => {
 
-    let { id } = useParams()
-
-    const [cities, setCities] = useState();
+    let { id } = useParams();
+    const dispatch = useDispatch();
+    
+    const city = useSelector((store) => store.cityReducer.city);
+    console.log(city);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/cities/${id}`)
-            .then(response => setCities(response.data.city))
-            .catch(error => { console.log(error) })
-    }, [id]);
-
+        dispatch(getCityById(id));
+    }, [dispatch, id]);
+    
+    console.log(city);
     return (
         <div className="w-full flex flex-col justify-center items-center bg-purple-50 mt-12">
-            {/* <img src={cities?.coverURL} alt={cities?.name} /> */}
 
-            <div className='w-full h-72 bg-cover bg-center bg-no-repeat flex justify-center items-center relative' style={{backgroundImage: `url(${cities?.coverURL})`}} >
+            <div className='w-full h-72 bg-cover bg-center bg-no-repeat flex justify-center items-center relative' style={{backgroundImage: `url(${city?.coverURL})`}} >
                 <div className='absolute w-full h-full bg-black opacity-20'></div>
-                <div className='absolute w-full h-full flex justify-center items-center text-white text-center font-semibold text-5xl md:text-7xl lg:text-8xl text-shadow'>{cities?.name}</div>
+                <div className='absolute w-full h-full flex justify-center items-center text-white text-center font-semibold text-5xl md:text-7xl lg:text-8xl text-shadow'>{city?.name}</div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
