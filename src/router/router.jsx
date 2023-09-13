@@ -3,8 +3,11 @@ import Main from "../layouts/Main.jsx";
 import Home from "../pages/Home.jsx";
 import Cities from "../pages/Cities.jsx";
 import CityDetails from "../components/CityDetails/CityDetails.jsx";
-import LogIn from "../components/LogIn/LogIn.jsx";
-import UnderConstruction from "../components/UnderConstruction/UnderConstruction.jsx";
+import ItineraryDetails from "../components/ItineraryDetails/ItineraryDetails.jsx";
+import SignIn from "../components/SignIn/SignIn.jsx";
+import SignUp from "../components/SignUp/SignUp.jsx";
+import ProtectedRoute from "./ProtectedRoute.jsx";
+
 
 const router = createBrowserRouter([
     {
@@ -20,25 +23,33 @@ const router = createBrowserRouter([
                 element: <Cities />
             },
             {
-                path: '/stays',
-                element: <Cities />
-            },
-            {
-                path: '/car-rentals',
-                element: <Cities />
-            },
-            {
                 path: '/cities/:id',
                 element: <CityDetails />
             },
             {
                 path: '/itineraries/:id',
-                element: <UnderConstruction />
+                element: <ItineraryDetails />
             },
             {
-                path: '/login',
-                element: <LogIn />
-            }
+                path: '/signin',
+                element: (<ProtectedRoute>
+                            <SignIn />
+                        </ProtectedRoute>)
+            },
+            {
+                path: '/signup',
+                element: (<ProtectedRoute>
+                            <SignUp />
+                        </ProtectedRoute>)
+            },
+            {
+                path: '*',
+                element: <h1 className="text-center text-3xl">This is an ERROR page</h1>
+            },
+            {
+                path: '/404',
+                element: <h1 className="text-center text-3xl">This is an ERROR page</h1>
+            },
         ]
     },
     {

@@ -25,9 +25,8 @@ const citiesDetails = () => {
         dispatch(getItinerariesByCityId(id));
     }, [dispatch, id]);
 
-    console.log(itineraries)
     return (
-        <div className="w-full flex flex-col justify-center items-center bg-purple-50 mt-12">
+        <div className="w-full min-h-screen flex flex-col items-center bg-purple-50 mt-12">
 
             <div className='w-full h-72 bg-cover bg-center bg-no-repeat flex justify-center items-center relative' style={{backgroundImage: `url(${city?.coverURL})`}} >
                 <div className='absolute w-full h-full bg-black opacity-20'></div>

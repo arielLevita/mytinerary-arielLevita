@@ -22,7 +22,7 @@ const itineraryReducer = createReducer(initialState,
     .addCase(getItineraryById.fulfilled, (state, action) => {
         return {
             ...state,
-            itinerary: action.payload
+            itinerary: action.payload.itinerary.itinerary
             };
         } 
     )

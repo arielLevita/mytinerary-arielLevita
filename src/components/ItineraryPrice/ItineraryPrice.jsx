@@ -8,7 +8,7 @@ const ItineraryPrice = ({price}) => {
     ));
 
     return (
-        <div className="coin-price">
+        <div className="coin-price ml-2">
             {coins}
         </div>
     );
