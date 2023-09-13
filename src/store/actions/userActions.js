@@ -11,7 +11,7 @@ export const user_photo = createAction(
 );
 
 export const user_signin = createAsyncThunk(
-    'user_login',
+    'user_signin',
     async (obj) => {
         try {
             const { data } = await axios.post('http://localhost:3000/api/auth/signin', obj.data)
@@ -39,4 +39,29 @@ export const user_token = createAction(
                 user
             }
         }
-})
+    })
+
+export const user_logout = createAction(
+    'user_logout',
+    async (token) => {
+        try {
+            localStorage.getItem('token')
+
+            await axios.post('http://localhost:3000/api/auth/signout', {}, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
+            });
+
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+
+            return {
+                user: null,
+                token: null
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+)

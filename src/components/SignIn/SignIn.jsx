@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { Link as Anchor } from "react-router-dom";
 import { user_signin } from "../../store/actions/userActions";
@@ -6,9 +6,6 @@ import IconArrowIn from "../Icons/IconArrowIn/IconArrowIn";
 import IconTargetBlank from "../Icons/IconTargetBlank/IconTargetBlank";
 
 const SignIn = () => {
-
-    const store = useSelector(store => store.userReducer);
-    console.log(store)
 
     const [formData, setFormData] = useState({
         email: '',
