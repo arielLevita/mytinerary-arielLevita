@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 import axios from "axios";
-import Swal from "sweetalert2";
 import { user_signup } from "../../store/actions/userActions";
 import IconArrowIn from "../Icons/IconArrowIn/IconArrowIn";
 import IconTargetBlank from "../Icons/IconTargetBlank/IconTargetBlank";
@@ -47,13 +46,6 @@ const SignUp = () => {
             dispatch(user_signup ({
                 data: formData
             }));
-
-            Swal.fire({
-                icon: 'success',
-                title: 'Great!',
-                text: 'User registered!',
-                footer: '<a href="/signin">Please Sign In</a>'
-            })
 
 
         } catch (error) {

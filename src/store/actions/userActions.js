@@ -1,5 +1,6 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const user_photo = createAction(
     'user_photo',
@@ -54,6 +55,13 @@ export const user_signup = createAsyncThunk(
     async (obj) => {
         try {
             const { data } = await axios.post('http://localhost:3000/api/auth/signup', obj.data)
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Great!',
+                text: 'User registered!',
+                footer: '<a href="/signin">Please Sign In</a>'
+            })
 
             return {
                 user: data.response.user,
