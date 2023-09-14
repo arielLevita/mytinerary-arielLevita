@@ -10,7 +10,6 @@ export default function GoogleSignin() {
     const dispatch = useDispatch();
 
     const handleCredentialResponse = async (response) => {
-        console.log(response.credential)
         const data = {
             token_id: response.credential
         }
