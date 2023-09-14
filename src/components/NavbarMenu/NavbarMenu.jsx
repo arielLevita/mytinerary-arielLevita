@@ -21,8 +21,6 @@ const NavbarMenu = () => {
         }
     };
 
-    console.log(user)
-
     const links = [
         { key: 1, title: 'Home', to: '/' },
         { key: 2, title: 'Cities', to: '/cities' },

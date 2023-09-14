@@ -31,6 +31,43 @@ export const user_signin = createAsyncThunk(
     }
 );
 
+export const user_google = createAsyncThunk(
+    'user_google',
+    async (obj) => {
+        const data = obj.data ? obj.data : obj
+        if (data) {
+            localStorage.setItem('token', data.token)
+            localStorage.setItem('user', JSON.stringify(data.user))
+            window.location.reload();
+            return {
+                user: data.user,
+                token: data.token
+            }
+        }
+        return {
+            user: null
+        }
+    })
+
+export const user_signup = createAsyncThunk(
+    'user_signup',
+    async (obj) => {
+        try {
+            const { data } = await axios.post('http://localhost:3000/api/auth/signup', obj.data)
+
+            return {
+                user: data.response.user,
+                token: data.response.token
+            }
+        } catch (error) {
+            console.log(error);
+            return {
+                user: null
+            }
+        }
+    }
+);
+
 export const user_token = createAction(
     'user_token',
     (user) => {

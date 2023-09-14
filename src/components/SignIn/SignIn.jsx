@@ -4,6 +4,7 @@ import { Link as Anchor } from "react-router-dom";
 import { user_signin } from "../../store/actions/userActions";
 import IconArrowIn from "../Icons/IconArrowIn/IconArrowIn";
 import IconTargetBlank from "../Icons/IconTargetBlank/IconTargetBlank";
+import GoogleSignIn from "../GoogleSignIn/GoogleSignIn.jsx"
 
 const SignIn = () => {
 
@@ -24,7 +25,7 @@ const SignIn = () => {
     const handleSignIn = async (e) => {
         e.preventDefault();
         try {
-            dispatch(user_signin ({
+            dispatch(user_signin({
                 data: formData
             }));
         } catch (error) {
@@ -40,12 +41,7 @@ const SignIn = () => {
                     <h1 className="text-4xl font-medium">SignIn</h1>
                     <p className="text-slate-500">Hi, Welcome back 👋</p>
 
-                    <div className="my-5">
-                        <button className="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-300 rounded-full text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
-                            <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="" /> <span>Login with Google</span>
-                        </button>
-                    </div>
-
+                    <GoogleSignIn />
                     <form onSubmit={handleSignIn} action="" className="my-10">
                         <div className="flex flex-col space-y-5">
                             <label htmlFor="email">
@@ -78,7 +74,7 @@ const SignIn = () => {
                                             id="remember"
                                             className="w-4 h-4 border-slate-200 focus:bg-purple-600 me-1"
                                         />
-                                            Remember me
+                                        Remember me
                                     </label>
                                 </div>
                                 <div>
