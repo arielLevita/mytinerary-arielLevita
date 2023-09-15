@@ -13,7 +13,6 @@ export default function GoogleSignin() {
         const data = {
             token_id: response.credential
         }
-        console.log(response.credential)
 
         const userResponse = await axios.post('http://localhost:3000/api/auth/google', data)
 

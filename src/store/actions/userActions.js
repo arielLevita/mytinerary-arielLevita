@@ -25,6 +25,12 @@ export const user_signin = createAsyncThunk(
             }
         } catch (error) {
             console.log(error);
+            Swal.fire({
+                title: 'Error!',
+                text: error.response.data.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
             return {
                 user: null
             }
@@ -60,7 +66,7 @@ export const user_signup = createAsyncThunk(
                 icon: 'success',
                 title: 'Great!',
                 text: 'User registered!',
-                footer: '<a href="/signin">Please Sign In</a>'
+                footer: '<a href="/signin">Please click here to SignIn</a>'
             })
 
             return {
@@ -69,6 +75,12 @@ export const user_signup = createAsyncThunk(
             }
         } catch (error) {
             console.log(error);
+            Swal.fire({
+                title: 'Error!',
+                text: error.response.data.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
             return {
                 user: null
             }
