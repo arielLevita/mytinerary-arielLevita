@@ -33,6 +33,8 @@ const SignIn = () => {
         }
     };
 
+    setTimeout(() => {}, 1000);
+
     return (
         // <div className="bg-purple-100 bg-gradient-to-r from-purple-200 py-16">
         <div className="img-cover">
