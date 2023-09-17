@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getItineraryById } from "../../store/actions/itineraryActions.js";
-import IconHeart from "../Icons/IconHeart/IconHeart.jsx";
+// import IconHeart from "../Icons/IconHeart/IconHeart.jsx";
 import ItineraryPrice from "../ItineraryPrice/ItineraryPrice.jsx";
 import HandleNotFound from "../HandleNotFound/HandleNotFound.jsx";
 import GoBackButton from "../GoBackButton/GoBackButton.jsx";
+import LikeButton from "../LikeButton/LikeButton.jsx";
 
 
 const ItineraryDetails = () => {
@@ -35,9 +36,9 @@ const ItineraryDetails = () => {
                     <img src={itinerary.user?.photo} alt={itinerary.user?.name} className="h-8 rounded-full me-2" />
                     <div className="flex items-center">
                         <span className="font-semibold me-2">by {itinerary.user?.name}</span>
-                        <button className="w-16 flex justify-around items-center border rounded-full shadow-slate-400 border-slate-300 text-xs px-2 py-1">
-                            <IconHeart />Like
-                        </button>
+                        {/* <div className="w-24 flex justify-around items-center border rounded-full shadow-slate-400 border-slate-300 text-xs px-2 py-1">
+                        </div> */}
+                            <LikeButton />
                     </div>
                 </div>}
 
