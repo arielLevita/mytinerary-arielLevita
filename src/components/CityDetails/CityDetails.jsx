@@ -26,7 +26,7 @@ const citiesDetails = () => {
     }, [dispatch, id]);
 
     return (
-        <div className="w-full min-h-screen flex flex-col items-center bg-purple-50 mt-12">
+        <div className="w-full min-h-screen flex flex-col items-center bg-blue-100 mt-12">
 
             <div className='w-full h-72 bg-cover bg-center bg-no-repeat flex justify-center items-center relative' style={{backgroundImage: `url(${city?.coverURL})`}} >
                 <div className='absolute w-full h-full bg-black opacity-20'></div>

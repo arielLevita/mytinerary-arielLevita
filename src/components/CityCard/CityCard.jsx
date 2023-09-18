@@ -1,13 +1,23 @@
 import PropTypes from 'prop-types';
 import { Link as Anchor } from "react-router-dom"
+import Atropos from 'atropos/react';
+import IconInfoCircle from '../Icons/IconInfoCircle/IconInfoCircle';
+import '../../../node_modules/atropos/atropos.css'
 
 const CityCard = ({_id, name, coverURL}) => {
     return (
-        <div className='flex flex-col border rounded-md border-black border-opacity-50 shadow-slate-400 hover:shadow-xl'>
-            <img className='w-full h-auto rounded-md p-1' src={coverURL} alt={name} />
-            <h4 className='text-gray-600 my-1 mx-2'>{name}</h4>
-            <Anchor className="bg-gradient-to-r from-purple-500 bg-purple-400 text-sm shadow-slate-400 shadow-sm text-center font-medium tracking-wider  text-white rounded-md hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700 m-2 p-0.5" key={_id} to={`/cities/${_id}`}>Details
-            </Anchor>
+        <div className='hover:shadow-2xl'>
+            <Atropos
+                shadow={false}
+            >
+                <img src={coverURL} alt={name} className='relative' data-atropos-offset="-2" />
+                <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center' data-atropos-offset="0">
+                    <h4 className='text-white text-shadow'>{name}</h4>
+                </div>
+                <Anchor className="absolute bottom-2 right-2 bg-gradient-to-r from-purple-500 bg-purple-400 text-sm text-center font-medium tracking-wider  text-white rounded-md shadow-lg hover:bg-purple-700 p-2 font-mono" key={_id} to={`/cities/${_id}`} data-atropos-offset="4">
+                    <IconInfoCircle />
+                </Anchor>
+            </Atropos>
         </div>
     )
 }

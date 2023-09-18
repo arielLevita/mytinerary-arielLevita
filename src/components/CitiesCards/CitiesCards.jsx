@@ -52,7 +52,7 @@ const CitiesCards = () => {
 
                 {
                     cities?.length > 0
-                    ? cities?.slice(0, 15).map((city) => (
+                    ? cities?.map((city) => (
                             <CityCard key={city._id} _id={city._id} name={city.name} coverURL={city.coverURL}/>
                     ))
                     : <HandleNotFound />
