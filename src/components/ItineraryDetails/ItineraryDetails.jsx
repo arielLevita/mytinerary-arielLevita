@@ -23,7 +23,6 @@ const ItineraryDetails = () => {
         dispatch(getItineraryById(id));
     }, [dispatch, id]);
 
-
     return (
         <div className="w-full min-h-screen flex flex-col items-center bg-blue-100 mt-12">
             <div className='w-full h-80 bg-cover bg-center bg-no-repeat flex justify-center items-center' style={{ backgroundImage: `url(${itinerary?.coverURL})` }} >

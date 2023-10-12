@@ -3,7 +3,7 @@ import IconHeart from "../Icons/IconHeart/IconHeart"
 import ItineraryPrice from "../ItineraryPrice/ItineraryPrice"
 
 
-const ItineraryBox = ({_id, name, coverURL, duration, price, userName, userPhoto}) => {
+const ItineraryBox = ({_id, name, coverURL, duration, price, likes, userName, userPhoto}) => {
     return (
         <div className="flex flex-col w-full sm:flex-row mx-auto bg-purple-50 text-slate-800 p-2 rounded-xl shadow shadow-slate-400">
             <img src={coverURL} alt="" className="sm:w-1/2 rounded-lg" />
@@ -25,10 +25,9 @@ const ItineraryBox = ({_id, name, coverURL, duration, price, userName, userPhoto
                         <img src={userPhoto} alt={userName} className="rounded-full me-1" />
                         <div className="flex flex-col justify-between">
                             <span className="text-xs font-semibold">{userName}</span>
-                            <button className="w-24 flex justify-around items-center border rounded-full shadow-slate-400 border-slate-300 text-xs p-1">
-                                <IconHeart /> 0 Likes
-                                {/* botón de likes */}
-                            </button>
+                            <div className="w-24 flex justify-start items-center text-xs py-1">
+                                <span className="mx-2"><IconHeart /></span> {likes.length} Likes
+                            </div>
                         </div>
                         <Anchor className="ml-auto text-indigo-800 uppercase text-right font-bold my-auto" to={`/itineraries/${_id}`}>
                             + view more

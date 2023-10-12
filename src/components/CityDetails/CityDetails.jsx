@@ -37,7 +37,7 @@ const citiesDetails = () => {
                 {
                     itineraries?.length > 0
                     ? itineraries?.map((itinerary) => (
-                            <ItineraryBox key={itinerary._id} _id={itinerary._id} name={itinerary.name} coverURL={itinerary.coverURL} duration={itinerary.duration} price={itinerary.price} userName={itinerary.user?.name} userPhoto={itinerary.user?.photo}/>
+                            <ItineraryBox key={itinerary._id} _id={itinerary._id} name={itinerary.name} coverURL={itinerary.coverURL} duration={itinerary.duration} price={itinerary.price} likes={itinerary.likes} userName={itinerary.user?.name} userPhoto={itinerary.user?.photo}/>
                     ))
                     : <HandleNotFound />
                 }

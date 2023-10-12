@@ -5,13 +5,3 @@ export const toggleLike = () => {
         type: 'TOGGLE_LIKE',
     };
 };
-
-
-/* export const user_photo = createAction(
-    'user_photo',
-    (obj) => ({
-        payload: {
-            photo: obj.photo,
-        }
-    })
-); */
