@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 import axios from "axios";
-import { user_signup } from "../../store/actions/userActions";
-import IconArrowIn from "../Icons/IconArrowIn/IconArrowIn";
-import IconTargetBlank from "../Icons/IconTargetBlank/IconTargetBlank";
-import GoogleSignIn from "../GoogleSignIn/GoogleSignIn.jsx"
+import { user_signup } from "../store/actions/userActions.js";
+import IconArrowIn from "../components/Icons/IconArrowIn/IconArrowIn.jsx";
+import IconTargetBlank from "../components/Icons/IconTargetBlank/IconTargetBlank.jsx";
+import GoogleSignIn from "../components/GoogleSignIn/GoogleSignIn.jsx"
 
 const SignUp = () => {
 

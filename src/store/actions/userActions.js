@@ -2,14 +2,16 @@ import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-export const user_photo = createAction(
-    'user_photo',
-    (obj) => ({
-        payload: {
-            photo: obj.photo,
+export const get_users = createAsyncThunk('get_users', async () => {
+    try {
+        const response = await axios.get('http://localhost:3000/api/users')
+        return {
+            users: response.data.users
         }
-    })
-);
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 export const user_signin = createAsyncThunk(
     'user_signin',

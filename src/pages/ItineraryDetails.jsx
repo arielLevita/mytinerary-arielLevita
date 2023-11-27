@@ -3,12 +3,13 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getItineraryById } from "../../store/actions/itineraryActions.js";
+import { getItineraryById } from "../store/actions/itineraryActions.js";
 // import IconHeart from "../Icons/IconHeart/IconHeart.jsx";
-import ItineraryPrice from "../ItineraryPrice/ItineraryPrice.jsx";
-import HandleNotFound from "../HandleNotFound/HandleNotFound.jsx";
-import GoBackButton from "../GoBackButton/GoBackButton.jsx";
-import LikeButton from "../LikeButton/LikeButton.jsx";
+import ItineraryPrice from "../components/ItineraryPrice/ItineraryPrice.jsx";
+import HandleNotFound from "../components/HandleNotFound/HandleNotFound.jsx";
+import GoBackButton from "../components/GoBackButton/GoBackButton.jsx";
+import LikeButton from "../components/LikeButton/LikeButton.jsx";
+import CommentsSection from "../components/CommentsSection/CommentsSection.jsx";
 
 
 const ItineraryDetails = () => {
@@ -28,7 +29,7 @@ const ItineraryDetails = () => {
             <div className='w-full h-80 bg-cover bg-center bg-no-repeat flex justify-center items-center' style={{ backgroundImage: `url(${itinerary?.coverURL})` }} >
                 {/* <div className='absolute w-full h-full bg-black opacity-20'></div> */}
             </div>
-            <div className='p-4'>
+            <div className='p-4 max-w-[800px]'>
                 <h1 className='w-full text-indigo-800 text-center font-bold text-2xl md:text-4xl lg:text-5xl p-4'>{itinerary?.name}</h1>
 
                 <div className="h-8 flex items-center border-t border-s border-slate-400 py-6 px-4 mb-8">
@@ -40,7 +41,7 @@ const ItineraryDetails = () => {
                 </div>
 
                 <div className="mb-2">
-                    <div className='w-full border rounded-2xl shadow bg-purple-50 shadow-indigo-400 mx-auto py-2 px-16 text-center font-semibold md:text-xl lg:text-2xl'>
+                    <div className='w-full border rounded-xl shadow bg-purple-50 shadow-indigo-400 mx-auto py-2 px-16 text-center font-semibold md:text-xl lg:text-2xl'>
                         <span>Price: <ItineraryPrice price={itinerary?.price} /></span>
                         <p>Duration: {itinerary?.duration}.</p>
                     </div>
@@ -58,8 +59,11 @@ const ItineraryDetails = () => {
                     </div>
                 </div>
                 <div className='w-full'>
-                    <div className='border bg-purple-50 rounded-2xl shadow shadow-indigo-400 mb-12 mx-auto py-2 px-4'>
+                    <div className='border bg-purple-50 rounded-xl shadow shadow-indigo-400 mb-4 mx-auto py-2 px-4'>
                         <h3 className='w-full text-center font-semibold text-xl md:text-3xl lg:text-4xl'>Coments:</h3>
+                    </div>
+                    <div className=" w-full">
+                        <CommentsSection itineraryId={id} />
                     </div>
                 </div>
             </div>

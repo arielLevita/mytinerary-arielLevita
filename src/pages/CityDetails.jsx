@@ -2,11 +2,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCityById } from "../../store/actions/cityActions.js";
-import { getItinerariesByCityId } from "../../store/actions/itineraryActions.js";
-import ItineraryBox from "../ItineraryBox/ItineraryBox";
-import HandleNotFound from "../HandleNotFound/HandleNotFound.jsx";
-import GoBackButton from "../GoBackButton/GoBackButton.jsx";
+import { getCityById } from "../store/actions/cityActions.js";
+import { getItinerariesByCityId } from "../store/actions/itineraryActions.js";
+import ItineraryBox from "../components/ItineraryBox/ItineraryBox.jsx";
+import HandleNotFound from "../components/HandleNotFound/HandleNotFound.jsx";
+import GoBackButton from "../components/GoBackButton/GoBackButton.jsx";
 
 const citiesDetails = () => {
 

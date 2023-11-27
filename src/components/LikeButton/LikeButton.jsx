@@ -76,10 +76,10 @@ const LikeButton = () => {
                     <span>{likeCounter} likes</span>
                 </button>
             ) : (
-                <button className='w-24 flex justify-between items-center border rounded-full shadow-slate-400 border-slate-300 text-xs px-4 py-1' disabled>
+                <span className='w-24 flex justify-between items-center border rounded-full shadow-slate-400 border-slate-300 text-xs px-4 py-1'>
                     <IconHeart />
-                    <span>{itinerary.likes.length} likes</span>
-                </button>
+                    <span>{itinerary.likes ? itinerary.likes.length : 0} likes</span>
+                </span>
             )}
         </div>
     );

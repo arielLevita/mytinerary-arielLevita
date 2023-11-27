@@ -2,10 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main.jsx";
 import Home from "../pages/Home.jsx";
 import Cities from "../pages/Cities.jsx";
-import CityDetails from "../components/CityDetails/CityDetails.jsx";
-import ItineraryDetails from "../components/ItineraryDetails/ItineraryDetails.jsx";
-import SignIn from "../components/SignIn/SignIn.jsx";
-import SignUp from "../components/SignUp/SignUp.jsx";
+import CityDetails from "../pages/CityDetails.jsx";
+import ItineraryDetails from "../pages/ItineraryDetails.jsx";
+import SignIn from "../pages/SignIn.jsx";
+import SignUp from "../pages/SignUp.jsx";
+import HandleNotFound from "../components/HandleNotFound/HandleNotFound.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 
 
@@ -44,17 +45,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '*',
-                element: <h1 className="text-center text-3xl">This is an ERROR page</h1>
+                element: <HandleNotFound />
             },
             {
                 path: '/404',
-                element: <h1 className="text-center text-3xl">This is an ERROR page</h1>
+                element: <HandleNotFound />
             },
         ]
-    },
-    {
-        path: '/cities',
-        element: <Cities />
     }
 ]);
 
