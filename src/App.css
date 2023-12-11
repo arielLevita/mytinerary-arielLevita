@@ -2,21 +2,112 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body::-webkit-scrollbar {
-    width: 4px;
+    width: 9px;
 }
 
 body::-webkit-scrollbar-thumb {
     background: linear-gradient(0deg, rgb(167, 111, 167), rgb(92, 61, 92));
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border: 3px solid white;
 }
 
 body::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(0deg, rgb(163, 76, 163), rgb(85, 38, 85));
+    border-width: 1px;
 }
 
 .text-shadow {
     text-shadow: 0 0 3px #000;
+}
+
+
+/* --- NAVBAR --- */
+nav svg {
+    fill: #fff;
+    height: 1.5em;
+}
+
+#navbar-menu,
+#navbar-menu .navbar-links,
+#navbar-menu .user-avatar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:639px) {
+    #navbar-menu {
+        position: fixed;
+        color: #fff;
+        top: 3.2rem;
+        left: 2.5%;
+        width: 95vw;
+        z-index: 5;
+        padding: 1rem 0;
+        background: rgba(25, 64, 109, 0.7);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 3px );
+        -webkit-backdrop-filter: blur( 3px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    
+    #navbar-menu,
+    #navbar-menu .navbar-links,
+    #navbar-menu .user-avatar {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+
+/*  --- HERO --- */
+.hero-background {
+    background: url('https://i.postimg.cc/SNGMTM0Z/cover-beach.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* --- CAROUSEL --- */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: #fff;
+}
+
+.swiper-pagination-bullet {
+    border: 2px solid #fff;
+    width: 10px;
+    aspect-ratio: 1/1;
+}
+
+
+/* --- CITIES CARDS --- */
+#citiesCards .card-body {
+    aspect-ratio: 3/2!important;
+}
+
+
+/* --- ITINERARY PRICE --- */
+.coin-price {
+    display: inline-block;
+}
+
+.coin {
+    color: rgb(175, 175, 175);
+    margin: 0 0.125rem;
+    font-weight: 600;
+}
+
+.coin .filled {
+    color: rgb(44, 44, 185);
 }

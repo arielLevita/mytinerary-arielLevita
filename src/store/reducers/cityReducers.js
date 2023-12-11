@@ -18,14 +18,13 @@ const cityReducer = createReducer(initialState,
             ...state,
             city: action.payload.city.city
         };
-            } 
-        )
-        .addCase(filter_cities.fulfilled, (state, action) => {
-            return {
-                ...state,
-                cities: action.payload.cities
-            }
-        })
+    })
+    .addCase(filter_cities.fulfilled, (state, action) => {
+        return {
+            ...state,
+            cities: action.payload.cities
+        }
+    })
 )
 
 export default cityReducer;

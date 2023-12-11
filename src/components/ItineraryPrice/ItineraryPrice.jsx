@@ -1,5 +1,3 @@
-import './ItineraryPrice.css'
-
 const ItineraryPrice = ({price}) => {
     const maxRating = 5;
 

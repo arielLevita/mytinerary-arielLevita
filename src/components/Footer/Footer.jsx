@@ -4,9 +4,7 @@ const Footer = () => {
 
     const links = [
         { key: 1, title: 'Home', to: '/' },
-        { key: 2, title: 'Cities', to: '/cities' },
-        { key: 3, title: 'Stays', to: '/stays' },
-        { key: 4, title: 'Car rentals', to: '/car-rentals' }
+        { key: 2, title: 'Cities', to: '/cities' }
     ]
 
     return (

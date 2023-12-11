@@ -76,18 +76,20 @@ const CommentsSection = () => {
     return (
         <div>
             <div className="my-8">
-                <form action="" className="relative">
-                    <label htmlFor="commentInput">Leave your comment:</label>
-                    <textarea
-                        name="commentInput"
-                        id="commentInput"
-                        rows="4"
-                        className="w-full rounded-lg focus-visible:outline-none pl-2 pr-10 py-2 border border-indigo-200"
-                        value={newCommentText}
-                        onChange={(e) => setNewCommentText(e.target.value)}
-                    ></textarea>
-                    <button type="submit" onClick={handleNewComment} className="absolute bottom-3 right-2 z-10 rounded-md p-2 bg-green-600 text-white shadow shadow-indigo-400"><IconSend /></button>
-                </form>
+                { user ? (
+                    <form action="" className="relative">
+                        <label htmlFor="commentInput">Leave your comment:</label>
+                        <textarea
+                            name="commentInput"
+                            id="commentInput"
+                            rows="4"
+                            className="w-full rounded-lg focus-visible:outline-none pl-2 pr-10 py-2 border border-indigo-200"
+                            value={newCommentText}
+                            onChange={(e) => setNewCommentText(e.target.value)}
+                        ></textarea>
+                        <button type="submit" onClick={handleNewComment} className="absolute bottom-3 right-2 z-10 rounded-md p-2 bg-green-600 text-white shadow shadow-indigo-400"><IconSend /></button>
+                    </form>
+                ) : ( null ) }
             </div>
 
             <div className="px-4">

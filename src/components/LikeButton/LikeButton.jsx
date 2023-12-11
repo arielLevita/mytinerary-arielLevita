@@ -69,7 +69,7 @@ const LikeButton = () => {
     };
     
     return (
-        <div className="">
+        <div>
             {user ? (
                 <button className='w-24 flex justify-between items-center border rounded-full shadow-slate-400 border-slate-300 text-xs px-4 py-1' onClick={handleLikeClick} >
                     <IconHeart liked={liked} />

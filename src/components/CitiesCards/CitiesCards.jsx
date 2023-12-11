@@ -5,7 +5,6 @@ import { filter_cities, get_cities } from "../../store/actions/cityActions.js";
 import CityCard from "../CityCard/CityCard.jsx";
 import IconMagnifyingGlass from '../Icons/IconMagnifyingGlass/IconMagnifyingGlass';
 import HandleNotFound from "../HandleNotFound/HandleNotFound.jsx";
-import './CitiesCards.css'
 
 const CitiesCards = () => {
 
@@ -26,7 +25,7 @@ const CitiesCards = () => {
     }
 
     return (
-        <>
+        <div id="citiesCards">
             <div className="flex items-center justify-center my-4">
                 <div className="flex items-center max-w-md mx-auto bg-white border border-gray-300 rounded-lg">
                     <div className="w-full">
@@ -49,7 +48,6 @@ const CitiesCards = () => {
             </div>
 
             <div className="w-full h-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 p-4">
-
                 {
                     cities?.length > 0
                     ? cities?.map((city) => (
@@ -58,7 +56,7 @@ const CitiesCards = () => {
                     : <HandleNotFound />
                 }
             </div>
-        </>
+        </div>
     )
 }
 

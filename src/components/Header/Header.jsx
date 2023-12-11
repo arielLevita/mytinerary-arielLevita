@@ -1,11 +1,10 @@
 import { Link as Anchor } from 'react-router-dom';
-import './Header.css';
 
 const Header = () => {
     return (
-        <header className='img-cover relative w-full h-screen'>
+        <header className='hero-background relative w-full h-screen'>
             <div className='absolute h-full w-full bg-black opacity-20'></div>
-            <div className='hero absolute w-full h-full flex flex-col justify-center items-center md:items-start p-8 text-white md:p-20'>
+            <div className='text-shadow absolute w-full h-full flex flex-col justify-center items-center md:items-start p-8 text-white md:p-20'>
                 <p className='text-2xl md:text-3xl lg:text-4xl'>Welcome to</p>
                 <h1 className='font-bold text-5xl md:text-7xl lg:text-8xl mb-2'>My<span className='text-purple-400'>Tinerary</span></h1>
                 <p className='text-center md:text-start md:text-xl max-w-[70%] my-4'>Find your perfect trip, designed by insiders who know and love their cities.</p>

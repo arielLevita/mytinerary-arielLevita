@@ -3,8 +3,6 @@ import NavbarMenu from '../NavbarMenu/NavbarMenu';
 import IconThreeDots from '../Icons/IconThreeDots/IconThreeDots';
 import IconXMark from '../Icons/IconXMark/IconXMark';
 
-import './Navbar.css';
-
 const Navbar = () => {
 
   let [show, setShow] = useState(false);

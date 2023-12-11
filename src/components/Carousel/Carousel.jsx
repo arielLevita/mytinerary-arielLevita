@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CarouselLinks from '../CarouselLinks/CarouselLinks';
 
-import './Carousel.css'
 import 'swiper/css';
 import 'swiper/css/a11y';
 import 'swiper/css/grid';
@@ -23,11 +22,19 @@ const Carousel = () => {
 
     return (
         <Swiper
-            slidesPerView={2}
-            slidesPerGroup={2}
+            slidesPerView={1}
+            slidesPerGroup={1}
             navigation
-            grid={{
-                rows: 2,
+            breakpoints={{
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                }
             }}
             autoplay={{
                 delay: 2500,
@@ -39,7 +46,7 @@ const Carousel = () => {
                 clickable: true,
             }}
             modules={[Autoplay, Navigation, A11y, Grid, Pagination]}
-            className="mySwiper w-full h-auto max-h-screen cHeight"
+            className="mySwiper w-full"
         >
             {cities?.slice(0, 12).map((city) => (
                 <SwiperSlide key={city._id}>
