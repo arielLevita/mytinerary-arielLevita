@@ -1,5 +1,9 @@
 import NavbarLinks from '../NavbarLinks/NavbarLinks';
 
+/* The above code is defining a functional component called `Footer` in JavaScript React. This
+component represents a footer section of a website. It includes a list of links, social media icons,
+and some text content. The component returns JSX code that renders the footer with the specified
+layout and styling. */
 const Footer = () => {
 
     const links = [
@@ -16,7 +20,6 @@ const Footer = () => {
                             <div className="list-none list-inside space-y-8 hidden sm:flex flex-col">
                                 {links.map((link) => (<NavbarLinks key={link.key} title={link.title} to={link.to} />))}
                             </div>
-
                             <ul role="list" className="inline-flex gap-8 sm:block sm:space-y-8 scale-150 sm:scale-100 px-5 sm:p-0">
                                 <li>
                                     <a href="#" className="flex items-center space-x-3 hover:text-sky-400 transition">
@@ -34,7 +37,6 @@ const Footer = () => {
                                         <span className='hidden sm:inline'>YouTube</span>
                                     </a>
                                 </li>
-
                                 <li>
                                     <a href="#" className="flex items-center space-x-3 hover:text-sky-400 transition">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5" viewBox="0 0 16 16">
@@ -51,19 +53,15 @@ const Footer = () => {
                                         <span className='hidden sm:inline'>Instagram</span>
                                     </a>
                                 </li>
-
                             </ul>
                         </div>
                         <div className="w-10/12 m-auto  mt-16 space-y-6 text-center sm:w-5/12 sm:mt-auto">
                             <span className="block text-gray-300">Find your perfect trip, designed by insiders who know and love their cities.</span>
-
                             <span className="block text-gray-300">Ariel Levita &copy; 2023</span>
-
                             <span className="flex justify-between text-white">
                                 <a href="#" className="font-semibold">Terms of Use </a>
                                 <a href="#" className="font-semibold"> Privacy Policy</a>
                             </span>
-
                             <span className="block text-gray-300">Need help? <a href="#" className="font-semibold text-white"> Contact Us</a></span>
                         </div>
                     </div>

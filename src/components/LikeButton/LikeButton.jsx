@@ -1,15 +1,17 @@
+/* This code is a React component called `LikeButton`. It is responsible for rendering a button that
+allows users to like or unlike a specific itinerary. */
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getItineraryById } from "../../store/actions/itineraryActions.js";
 import axios from 'axios';
+import apiUrl from '../../api.js';
 import IconHeart from '../Icons/IconHeart/IconHeart';
 
 const LikeButton = () => {
 
     let { id } = useParams();
     const dispatch = useDispatch();
-
     const initialItinerary = useSelector((store) => store.itineraryReducer.itinerary);
     let [itinerary, setItinerary] = useState({initialItinerary})
     const user = localStorage.getItem('user');
@@ -17,6 +19,36 @@ const LikeButton = () => {
     let [liked, setLiked] = useState(false);
     let [likeCounter, setLikeCounter] = useState(0);
     const [updatedLikesArray, setUpdatedLikesArray] = useState(null);
+
+    /**
+     * The `handleLikeClick` function is an asynchronous function that handles the logic for liking or
+     * unliking an itinerary item in a React application.
+     */
+    const handleLikeClick = async () => {
+        try {
+            let updatedLikesArray;
+            
+            if ((itinerary.likes === undefined) || (!itinerary.likes)) {
+                itinerary.likes = [];
+            }
+    
+            if (itinerary.likes.includes(parsedUser.email)) {
+                updatedLikesArray = itinerary.likes.filter(email => email !== parsedUser.email);
+            } else {
+                updatedLikesArray = [...itinerary.likes, parsedUser.email];
+            }
+    
+            const putResponse = await axios.put(`${apiUrl}/itineraries/${itinerary._id}`, { likes: updatedLikesArray });
+            if (putResponse.status === 200) {
+                setUpdatedLikesArray(updatedLikesArray);
+                setItinerary({ ...itinerary, likes: updatedLikesArray });
+                setLiked(updatedLikesArray.includes(parsedUser.email));
+                setLikeCounter(updatedLikesArray.length);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     useEffect(() => {
         dispatch(getItineraryById(id));
@@ -42,32 +74,6 @@ const LikeButton = () => {
         }
     }, [updatedLikesArray, parsedUser]);
 
-    const handleLikeClick = async () => {
-        try {
-            let updatedLikesArray;
-            
-            if ((itinerary.likes === undefined) || (!itinerary.likes)) {
-                itinerary.likes = [];
-            }
-    
-            if (itinerary.likes.includes(parsedUser.email)) {
-                updatedLikesArray = itinerary.likes.filter(email => email !== parsedUser.email);
-            } else {
-                updatedLikesArray = [...itinerary.likes, parsedUser.email];
-            }
-    
-            const putResponse = await axios.put(`http://localhost:3000/api/itineraries/${itinerary._id}`, { likes: updatedLikesArray });
-            if (putResponse.status === 200) {
-                setUpdatedLikesArray(updatedLikesArray);
-                setItinerary({ ...itinerary, likes: updatedLikesArray });
-                setLiked(updatedLikesArray.includes(parsedUser.email));
-                setLikeCounter(updatedLikesArray.length);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    
     return (
         <div>
             {user ? (

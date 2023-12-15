@@ -1,3 +1,5 @@
+/* The code defines a React functional component called `ItineraryPrice`. It takes a prop called
+`price` as input. */
 const ItineraryPrice = ({price}) => {
     const maxRating = 5;
 

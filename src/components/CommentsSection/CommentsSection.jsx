@@ -5,7 +5,10 @@ import { getCommentsByItineraryId } from "../../store/actions/commentActions";
 import { get_users } from "../../store/actions/userActions";
 import IconSend from "../Icons/IconSend/IconSend";
 import axios from "axios";
+import apiUrl from "../../api";
 
+/* The `CommentsSection` component is a React component that displays a section for users to leave
+comments and displays existing comments. */
 const CommentsSection = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
@@ -17,6 +20,11 @@ const CommentsSection = () => {
     const parsedUser = JSON.parse(user);
     const allUsers = useSelector((store) => store.userReducer.allUsers);
 
+    /**
+     * This code snippet is a React component that handles fetching comments, posting new comments, and
+     * sorting comments by their update date.
+     * @returns The code snippet does not have a return statement, so it is not returning anything.
+     */
     useEffect(() => {
         dispatch(getCommentsByItineraryId(id));
         dispatch(get_users());
@@ -29,13 +37,11 @@ const CommentsSection = () => {
             console.error("User not found");
             return;
         }
-
         const newDBComment = {
             text: newCommentText,
             itineraryId: id,
             userId: matchingUser._id,
         };
-        
         const newComment = {
             text: newCommentText,
             user: {
@@ -45,9 +51,8 @@ const CommentsSection = () => {
             },
             updatedAt: new Date().toISOString()
         };
-
         try {
-            const postComment = await axios.post('http://localhost:3000/api/comments', newDBComment)
+            const postComment = await axios.post(`${apiUrl}/comments`, newDBComment)
             if (postComment.status === 200) {
                 console.log(sortedComments)
             }
@@ -55,10 +60,8 @@ const CommentsSection = () => {
             console.log(error)
         }
         setNewCommentsArray([...newCommentsArray, newComment].reverse());
-        
         setNewCommentText("");
     };
-    
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const day = date.getDate();
@@ -91,7 +94,6 @@ const CommentsSection = () => {
                     </form>
                 ) : ( null ) }
             </div>
-
             <div className="px-4">
                 {newCommentsArray?.map((comment, index) => (
                     <div key={comment.updatedAt + index} className="mb-6">
@@ -106,7 +108,6 @@ const CommentsSection = () => {
                     </div>
                 ))}
             </div>
-
             <div className="px-4">
                 {sortedComments?.map(comment => (
                     <div key={comment._id} className="mb-6">

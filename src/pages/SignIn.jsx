@@ -6,22 +6,22 @@ import IconArrowIn from "../components/Icons/IconArrowIn/IconArrowIn.jsx";
 import IconTargetBlank from "../components/Icons/IconTargetBlank/IconTargetBlank.jsx";
 import GoogleSignIn from "../components/GoogleSignIn/GoogleSignIn.jsx"
 
+/* The code defines a functional component called `SignIn`. Inside the component, it uses the
+`useState` hook to create a state variable `formData` which holds the values of `email` and
+`password`. The `setFormData` function is used to update the state when the input fields change. */
 const SignIn = () => {
 
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     }, []);
-
     const dispatch = useDispatch();
-
     const handleInput = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
     };
-
     const handleSignIn = async (e) => {
         e.preventDefault();
         try {
@@ -32,17 +32,14 @@ const SignIn = () => {
             console.error;
         }
     };
-
     setTimeout(() => {}, 1000);
 
     return (
-        // <div className="bg-purple-100 bg-gradient-to-r from-purple-200 py-16">
-        <div className="img-cover">
+        <div className="hero-background">
             <div className=" bg-black bg-opacity-20 py-16">
                 <div className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow shadow-slate-400">
                     <h1 className="text-4xl font-medium">SignIn</h1>
                     <p className="text-slate-500">Hi, Welcome back 👋</p>
-
                     <GoogleSignIn />
                     <form onSubmit={handleSignIn} action="" className="my-10">
                         <div className="flex flex-col space-y-5">

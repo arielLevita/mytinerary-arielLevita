@@ -1,7 +1,12 @@
+/**
+ * The `ItineraryBox` component is a React component that displays information about a travel
+ * itinerary, including the itinerary name, cover image, duration, price, likes, user name, and user
+ * photo.
+ * @returns The ItineraryBox component is returning a JSX element.
+ */
 import { Link as Anchor } from "react-router-dom"
 import IconHeart from "../Icons/IconHeart/IconHeart"
 import ItineraryPrice from "../ItineraryPrice/ItineraryPrice"
-
 
 const ItineraryBox = ({_id, name, coverURL, duration, price, likes, userName, userPhoto}) => {
     return (
@@ -11,7 +16,7 @@ const ItineraryBox = ({_id, name, coverURL, duration, price, likes, userName, us
                 <div className="flex flex-col flex-grow border-l-2 border-indigo-500 px-2">
                     <h3 className="text-2xl font-bold text-indigo-800 mt-2 sm:mt-0">{name}</h3>
                     <ul className="list-none text-xs italic">no alcancé a poner los hashtags.
-                        {/* acá va el mapeo de los hashtags. inline-flex align-center justify-start */}
+                        {/* TODO acá va el mapeo de los hashtags. inline-flex align-center justify-start */}
                     </ul>
                     <div className="font-semibold"> Price: 
                         <ItineraryPrice price={price} />
@@ -35,7 +40,6 @@ const ItineraryBox = ({_id, name, coverURL, duration, price, likes, userName, us
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

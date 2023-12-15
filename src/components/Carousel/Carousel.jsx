@@ -1,9 +1,11 @@
+/* The code is a React component called `Carousel` that uses the Swiper library to create a
+carousel/slider of cities. */
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, A11y, Grid } from 'swiper/modules';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CarouselLinks from '../CarouselLinks/CarouselLinks';
-
+import apiUrl from '../../api';
 import 'swiper/css';
 import 'swiper/css/a11y';
 import 'swiper/css/grid';
@@ -15,11 +17,11 @@ const Carousel = () => {
     const [cities, setCities] = useState();
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/cities')
+        axios.get(`${apiUrl}/cities`)
             .then(response => setCities(response.data.cities))
             .catch(err => console.log(err))
     }, []);
-
+    
     return (
         <Swiper
             slidesPerView={1}
@@ -46,7 +48,7 @@ const Carousel = () => {
                 clickable: true,
             }}
             modules={[Autoplay, Navigation, A11y, Grid, Pagination]}
-            className="mySwiper w-full"
+            className="mySwiper w-full h-48"
         >
             {cities?.slice(0, 12).map((city) => (
                 <SwiperSlide key={city._id}>

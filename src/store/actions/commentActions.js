@@ -1,9 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import apiUrl from "../../api";
 
 export const get_comments = createAsyncThunk('get_comments', async () => {
     try {
-        const response = await axios.get('http://localhost:3000/api/comments')
+        const response = await axios.get(`${apiUrl}/comments`)
         return {
             comments: response.data.comments
         }
@@ -14,14 +15,12 @@ export const get_comments = createAsyncThunk('get_comments', async () => {
 
 export const getCommentsByItineraryId = createAsyncThunk('getCommentsByItineraryId', async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/api/comments?itineraryId=${id}`)
-        
+        const response = await axios.get(`${apiUrl}/comments?itineraryId=${id}`)
         if (!response.data || response.data.comments === undefined) {
             return {
                 comments: []
             };
         }
-
         return {
             comments: response.data.comments
         }
@@ -32,7 +31,7 @@ export const getCommentsByItineraryId = createAsyncThunk('getCommentsByItinerary
 
 export const getCommentById = createAsyncThunk('getCommentById', async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/api/comments/${id}`)
+        const response = await axios.get(`${apiUrl}/comments/${id}`)
         return {
             comment: response.data
         }
@@ -43,7 +42,7 @@ export const getCommentById = createAsyncThunk('getCommentById', async (id) => {
 
 export const addComment = createAsyncThunk('addComment', async (comment) => {
     try {
-        const response = await axios.post('http://localhost:3000/api/comments', comment);
+        const response = await axios.post(`${apiUrl}/comments`, comment);
         return {
             comment: response.data
         };

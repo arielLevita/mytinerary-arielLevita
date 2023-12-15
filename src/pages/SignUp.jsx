@@ -5,12 +5,16 @@ import axios from "axios";
 import { user_signup } from "../store/actions/userActions.js";
 import IconArrowIn from "../components/Icons/IconArrowIn/IconArrowIn.jsx";
 import IconTargetBlank from "../components/Icons/IconTargetBlank/IconTargetBlank.jsx";
-import GoogleSignIn from "../components/GoogleSignIn/GoogleSignIn.jsx"
+import GoogleSignIn from "../components/GoogleSignIn/GoogleSignIn.jsx";
 
+/* The above code is a React component for a sign-up form. It allows users to enter their name, email,
+password, avatar image URL, and select their nationality. The component uses React hooks such as
+useState and useEffect to manage the form data and fetch a list of countries from an API. It also
+dispatches an action to sign up the user when the form is submitted. The form includes input fields,
+a select dropdown, and a button for signing up. */
 const SignUp = () => {
 
     const [countryData, setCountryData] = useState([]);
-    
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -18,7 +22,25 @@ const SignUp = () => {
         photo: '',
         nationality: ''
     }, []);
-
+    const dispatch = useDispatch();
+    const handleInput = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+    
+    const handleSignUp = async (e) => {
+        e.preventDefault();
+        try {
+            dispatch(user_signup ({
+                data: formData
+            }));
+        } catch (error) {
+            console.error;
+        }
+    };
+    
     useEffect(() => {
         const countries = async () => {
             try {
@@ -31,31 +53,8 @@ const SignUp = () => {
         countries();
     }, []);
 
-    const dispatch = useDispatch();
-    
-    const handleInput = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSignUp = async (e) => {
-        e.preventDefault();
-        try {
-            dispatch(user_signup ({
-                data: formData
-            }));
-
-
-        } catch (error) {
-            console.error;
-        }
-    };
-
     return (
-        // <div className="bg-purple-100 bg-gradient-to-r from-purple-200 py-16">
-        <div className="img-cover">
+        <div className="hero-background">
             <div className=" bg-black bg-opacity-20 py-16">
                 <div className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow shadow-slate-400">
                     <h1 className="text-4xl font-medium">Sign Up</h1>

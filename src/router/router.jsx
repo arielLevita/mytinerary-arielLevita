@@ -10,6 +10,12 @@ import HandleNotFound from "../components/HandleNotFound/HandleNotFound.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 
 
+/* The code is creating a router configuration using the `createBrowserRouter` function from the
+`react-router-dom` library. The router configuration defines the different routes and their
+corresponding components that will be rendered when the user navigates to those routes. */
+/* The code is creating a router configuration using the `createBrowserRouter` function from the
+`react-router-dom` library. The router configuration defines the different routes and their
+corresponding components that will be rendered when the user navigates to those routes. */
 const router = createBrowserRouter([
     {
         path: '/',

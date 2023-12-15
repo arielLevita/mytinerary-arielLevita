@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 
 import { Link as Anchor } from 'react-router-dom';
 
+/**
+ * The `NavbarLinks` function is a React component that renders a link in a navbar with a specified
+ * `to` prop and `title` prop.
+ */
 const NavbarLinks = ({to, title}) => {
     return <Anchor className="navbar-link font-medium text-lg text-shadow mx-4" to={to}>{title}</Anchor>
 }

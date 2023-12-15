@@ -1,9 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import apiUrl from "../../api";
 
 export const get_itineraries = createAsyncThunk('get_itineraries', async () => {
     try {
-        const response = await axios.get('http://localhost:3000/api/itineraries')
+        const response = await axios.get(`${apiUrl}/itineraries`)
         return {
             itineraries: response.data.itineraries
         }
@@ -14,7 +15,7 @@ export const get_itineraries = createAsyncThunk('get_itineraries', async () => {
 
 export const getItinerariesByCityId = createAsyncThunk('getItinerariesByCityId', async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/api/itineraries?cityId=${id}`)
+        const response = await axios.get(`${apiUrl}/itineraries?cityId=${id}`)
         return {
             itineraries: response.data.itineraries
         }
@@ -25,7 +26,7 @@ export const getItinerariesByCityId = createAsyncThunk('getItinerariesByCityId',
 
 export const getItineraryById = createAsyncThunk('getItineraryById', async (id) => {
     try {
-        const response = await axios.get(`http://localhost:3000/api/itineraries/${id}`)
+        const response = await axios.get(`${apiUrl}/itineraries/${id}`)
         return {
             itinerary: response.data
         }
