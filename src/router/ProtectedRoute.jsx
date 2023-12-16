@@ -14,7 +14,7 @@ const ProtectedRoute = ({children}) => {
     if(!user) {
         return children
     }
-    return navigate('/')
+    return navigate("/cities")
 }
 
 export default ProtectedRoute
