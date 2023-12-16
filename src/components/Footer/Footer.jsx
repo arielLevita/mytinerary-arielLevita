@@ -56,8 +56,8 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="w-10/12 m-auto  mt-16 space-y-6 text-center sm:w-5/12 sm:mt-auto">
-                            <span className="block text-gray-300">Find your perfect trip, designed by insiders who know and love their cities.</span>
-                            <span className="block text-gray-300">Ariel Levita &copy; 2023</span>
+                            <span className="block text-gray-300">Discover your perfect trip: Crafted by insiders, loved by explorers.</span>
+                            <a className="block text-gray-300 no-underline italic" href='https://www.linkedin.com/in/ariel-levita/'>Ariel Levita &copy; 2023</a>
                             <span className="flex justify-between text-white">
                                 <a href="#" className="font-semibold">Terms of Use </a>
                                 <a href="#" className="font-semibold"> Privacy Policy</a>
