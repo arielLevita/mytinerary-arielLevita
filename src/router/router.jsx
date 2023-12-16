@@ -7,7 +7,7 @@ import ItineraryDetails from "../pages/ItineraryDetails.jsx";
 import SignIn from "../pages/SignIn.jsx";
 import SignUp from "../pages/SignUp.jsx";
 import HandleNotFound from "../components/HandleNotFound/HandleNotFound.jsx";
-import ProtectedRoute from "./ProtectedRoute.jsx";
+// import ProtectedRoute from "./ProtectedRoute.jsx";
 
 
 /* The code is creating a router configuration using the `createBrowserRouter` function from the
@@ -37,17 +37,25 @@ const router = createBrowserRouter([
                 path: '/itineraries/:id',
                 element: <ItineraryDetails />
             },
-            {
+            /* {
                 path: '/signin',
                 element: (<ProtectedRoute>
                             <SignIn />
                         </ProtectedRoute>)
-            },
+            }, */
             {
+                path: '/signin',
+                element: <SignIn />
+            },
+            /* {
                 path: '/signup',
                 element: (<ProtectedRoute>
                             <SignUp />
                         </ProtectedRoute>)
+            }, */
+            {
+                path: '/signup',
+                element: <SignUp />
             },
             {
                 path: '*',
