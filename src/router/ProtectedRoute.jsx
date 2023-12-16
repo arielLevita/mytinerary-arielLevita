@@ -19,12 +19,12 @@ import { useNavigate } from "react-router-dom";
 
 export default ProtectedRoute */
 
-const ProtectedRoute = ({ Outlet, redirectTo = -1 }) => {
+const ProtectedRoute = ({ children, redirectTo = -1 }) => {
     let user = useSelector(store => store.userReducer.user);
     const navigate = useNavigate();
 
     if (!user) {
-        return <Outlet />;
+        return children;
     }
 
     return navigate(redirectTo);
