@@ -14,6 +14,9 @@ const ProtectedRoute = ({children}) => {
     if(!user) {
         return children
     }
+    if(user.google) {
+        navigate(-2)
+    }
     return navigate(-1)
 }
 
