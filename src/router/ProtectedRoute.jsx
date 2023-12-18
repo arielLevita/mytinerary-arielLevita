@@ -15,9 +15,10 @@ const ProtectedRoute = ({children}) => {
         return children
     }
     if(user.google) {
-        navigate(-2)
+        return navigate("/")
+    } else {
+        return navigate(-1)
     }
-    return navigate(-1)
 }
 
 export default ProtectedRoute

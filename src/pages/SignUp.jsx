@@ -5,7 +5,7 @@ import axios from "axios";
 import { user_signup } from "../store/actions/userActions.js";
 import IconArrowIn from "../components/Icons/IconArrowIn/IconArrowIn.jsx";
 import IconTargetBlank from "../components/Icons/IconTargetBlank/IconTargetBlank.jsx";
-// import GoogleSignIn from "../components/GoogleSignIn/GoogleSignIn.jsx";
+import GoogleSignIn from "../components/GoogleSignIn/GoogleSignIn.jsx";
 
 /* The above code is a React component for a sign-up form. It allows users to enter their name, email,
 password, avatar image URL, and select their nationality. The component uses React hooks such as
@@ -60,7 +60,7 @@ const SignUp = () => {
                     <h1 className="text-4xl font-medium">Sign Up</h1>
                     <p className="text-slate-500">Hi, Welcome 👋</p>
 
-                    {/* <GoogleSignIn /> */}
+                    <GoogleSignIn />
                     <form onSubmit={handleSignUp} action="" className="my-10">
                         <div className="flex flex-col space-y-5">
                             <label htmlFor="name">
