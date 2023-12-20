@@ -27,7 +27,8 @@ const GoogleSignin = () => {
     useEffect(() => {
         if (window.google) {
             window.google.accounts.id.initialize({
-                client_id: import.meta.env.VITE_APP_GOOGLE_CLIENT_ID,
+                // client_id: import.meta.env.VITE_APP_GOOGLE_CLIENT_ID,
+                client_id: "135761522316-ka4v3tg0l74hi32e98vgqmhim552ipqu.apps.googleusercontent.com",
                 callback: handleCredentialResponse
             });
             window.google.accounts.id.renderButton(
