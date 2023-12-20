@@ -1,5 +1,3 @@
-/* This code is a React component called `LikeButton`. It is responsible for rendering a button that
-allows users to like or unlike a specific itinerary. */
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,10 +18,6 @@ const LikeButton = () => {
     let [likeCounter, setLikeCounter] = useState(0);
     const [updatedLikesArray, setUpdatedLikesArray] = useState(null);
 
-    /**
-     * The `handleLikeClick` function is an asynchronous function that handles the logic for liking or
-     * unliking an itinerary item in a React application.
-     */
     const handleLikeClick = async () => {
         try {
             let updatedLikesArray;

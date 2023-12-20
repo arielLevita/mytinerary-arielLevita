@@ -2,8 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import apiUrl from "../../api";
 
-/* The code snippet is creating an asynchronous thunk function called `get_cities`. Thunk functions are
-used in Redux to handle asynchronous actions. */
 export const get_cities = createAsyncThunk('get_cities', async () => {
     try {
         const response = await axios.get(`${apiUrl}/cities`)

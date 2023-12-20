@@ -20,11 +20,6 @@ const CommentsSection = () => {
     const parsedUser = JSON.parse(user);
     const allUsers = useSelector((store) => store.userReducer.allUsers);
 
-    /**
-     * This code snippet is a React component that handles fetching comments, posting new comments, and
-     * sorting comments by their update date.
-     * @returns The code snippet does not have a return statement, so it is not returning anything.
-     */
     useEffect(() => {
         dispatch(getCommentsByItineraryId(id));
         dispatch(get_users());

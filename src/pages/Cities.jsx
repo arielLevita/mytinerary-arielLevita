@@ -1,5 +1,3 @@
-/* The code is a React component called "Cities". It imports necessary dependencies such as useEffect,
-useRef, useDispatch, useSelector, and various components. */
 /* eslint-disable react/jsx-key */
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,10 +16,6 @@ const Cities = () => {
         dispatch(get_cities())
     }, [dispatch]);
 
-    /**
-     * The handleSearch function dispatches an action to filter cities based on the value of an input
-     * field.
-     */
     const handleSearch = () => {
         dispatch(filter_cities({
             name: inputSearch.current.value

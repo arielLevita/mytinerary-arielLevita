@@ -1,5 +1,3 @@
-/* The code is defining a React component called `NavbarMenu`. This component is responsible for
-rendering a navigation menu with links and a user avatar. */
 import { Link as Anchor } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import NavbarLinks from '../NavbarLinks/NavbarLinks';
@@ -10,10 +8,7 @@ const NavbarMenu = () => {
     const user = useSelector(store => store.userReducer.user)
     const defaultPhoto = 'https://i.postimg.cc/yN3xNK4z/default-avatar.png';
     const dispatch = useDispatch();
-    /**
-     * The function `handleLogout` is an asynchronous function that attempts to retrieve a token from
-     * local storage and dispatches a user_logout action with the token and user as parameters.
-     */
+    
     const handleLogout = async () => {
         try {
             const token = localStorage.getItem('token');

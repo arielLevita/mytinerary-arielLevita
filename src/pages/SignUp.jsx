@@ -7,11 +7,6 @@ import IconArrowIn from "../components/Icons/IconArrowIn/IconArrowIn.jsx";
 import IconTargetBlank from "../components/Icons/IconTargetBlank/IconTargetBlank.jsx";
 import GoogleSignIn from "../components/GoogleSignIn/GoogleSignIn.jsx";
 
-/* The above code is a React component for a sign-up form. It allows users to enter their name, email,
-password, avatar image URL, and select their nationality. The component uses React hooks such as
-useState and useEffect to manage the form data and fetch a list of countries from an API. It also
-dispatches an action to sign up the user when the form is submitted. The form includes input fields,
-a select dropdown, and a button for signing up. */
 const SignUp = () => {
 
     const [countryData, setCountryData] = useState([]);

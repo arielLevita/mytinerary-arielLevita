@@ -1,5 +1,3 @@
-/* The code is a React component called `Carousel` that uses the Swiper library to create a
-carousel/slider of cities. */
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, A11y, Grid } from 'swiper/modules';
 import { useState, useEffect } from 'react';

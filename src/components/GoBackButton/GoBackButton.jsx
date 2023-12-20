@@ -1,11 +1,3 @@
-/**
- * The GoBackButton component is a React button that uses the useNavigate hook from react-router-dom to
- * navigate back to the previous page when clicked.
- * @returns The code is returning a functional component called GoBackButton. This component renders a
- * button with the text "Go Back". When the button is clicked, it calls the handleGoBack function,
- * which uses the useNavigate hook from react-router-dom to navigate back to the previous page. The
- * button also has some styling classes applied to it for visual appearance.
- */
 import { useNavigate } from "react-router-dom";
 
 const GoBackButton = () => {

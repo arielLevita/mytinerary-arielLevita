@@ -1,8 +1,3 @@
-/**
- * The `CarouselLinks` component is a React component that displays a card with a background image and
- * a name overlay.
- * @returns The component `CarouselLinks` is returning a JSX element.
- */
 import PropTypes from 'prop-types';
 
 const CarouselLinks = ({name, coverURL}) => {

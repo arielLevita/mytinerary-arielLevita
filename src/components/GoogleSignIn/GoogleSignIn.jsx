@@ -1,9 +1,3 @@
-/**
- * The `GoogleSignin` component is a React component that renders a Google Sign-In button and handles
- * the authentication process using the Google Sign-In API.
- * @returns The component is returning a `<div>` element containing a button with a ref to
- * `googleButton`.
- */
 import axios from "axios";
 import { useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";

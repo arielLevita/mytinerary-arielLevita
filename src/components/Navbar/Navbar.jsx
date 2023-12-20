@@ -1,8 +1,3 @@
-/**
- * The `Navbar` component is a React functional component that renders a navigation bar with a logo,
- * menu, and a button to toggle the menu visibility.
- * @returns The Navbar component is returning a JSX element representing the navigation bar.
- */
 import { useState } from "react";
 import { Link as Anchor } from 'react-router-dom';
 import NavbarMenu from "../NavbarMenu/NavbarMenu";

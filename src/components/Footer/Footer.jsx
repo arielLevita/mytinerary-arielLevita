@@ -1,9 +1,5 @@
 import NavbarLinks from '../NavbarLinks/NavbarLinks';
 
-/* The above code is defining a functional component called `Footer` in JavaScript React. This
-component represents a footer section of a website. It includes a list of links, social media icons,
-and some text content. The component returns JSX code that renders the footer with the specified
-layout and styling. */
 const Footer = () => {
 
     const links = [

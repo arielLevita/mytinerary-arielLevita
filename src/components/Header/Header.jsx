@@ -1,12 +1,3 @@
-/**
- * The Header component is a React functional component that renders a hero section with a background
- * image, a title, a description, and a button to navigate to the cities page.
- * @returns The Header component is returning a header element with a background image and text
- * content. The header element contains two div elements, one for the background overlay and another
- * for the text content. The text content includes a paragraph, a heading, and another paragraph. At
- * the end, there is an Anchor component from the react-router-dom library, which is used as a link to
- * the '/cities' route.
- */
 import { Link as Anchor } from 'react-router-dom';
 
 const Header = () => {

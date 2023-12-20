@@ -6,9 +6,6 @@ import IconArrowIn from "../components/Icons/IconArrowIn/IconArrowIn.jsx";
 import IconTargetBlank from "../components/Icons/IconTargetBlank/IconTargetBlank.jsx";
 import GoogleSignIn from "../components/GoogleSignIn/GoogleSignIn.jsx"
 
-/* The code defines a functional component called `SignIn`. Inside the component, it uses the
-`useState` hook to create a state variable `formData` which holds the values of `email` and
-`password`. The `setFormData` function is used to update the state when the input fields change. */
 const SignIn = () => {
 
     const [formData, setFormData] = useState({

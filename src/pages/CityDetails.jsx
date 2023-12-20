@@ -1,5 +1,3 @@
-/* The code you provided is a React component written in JavaScript. It is a functional component
-called `citiesDetails` that displays details about a city and its associated itineraries. */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";

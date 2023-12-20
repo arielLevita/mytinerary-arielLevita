@@ -1,9 +1,3 @@
-/**
- * The `ItineraryBox` component is a React component that displays information about a travel
- * itinerary, including the itinerary name, cover image, duration, price, likes, user name, and user
- * photo.
- * @returns The ItineraryBox component is returning a JSX element.
- */
 import { Link as Anchor } from "react-router-dom"
 import IconHeart from "../Icons/IconHeart/IconHeart"
 import ItineraryPrice from "../ItineraryPrice/ItineraryPrice"

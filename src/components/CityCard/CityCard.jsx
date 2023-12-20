@@ -4,11 +4,6 @@ import Atropos from 'atropos/react';
 import IconInfoCircle from '../Icons/IconInfoCircle/IconInfoCircle';
 import '../../../node_modules/atropos/atropos.css'
 
-/**
- * The CityCard component is a React component that displays a card with an image, name, and a link to
- * more information about the city.
- * @returns The CityCard component is returning a JSX element.
- */
 const CityCard = ({_id, name, coverURL}) => {
     return (
         <div className='hover:shadow-2xl'>

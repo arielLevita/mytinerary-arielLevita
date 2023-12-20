@@ -7,11 +7,6 @@ import router from './router/router';
 import apiUrl from './api';
 import './App.css';
 
-/**
- * The App component is a React component that dispatches a user_token action if a token is present in
- * local storage.
- * @returns The App component is returning a RouterProvider component with a prop of router.
- */
 function App() {
 
   const dispatch = useDispatch();
