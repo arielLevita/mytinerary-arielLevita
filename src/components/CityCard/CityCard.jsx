@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link as Anchor } from "react-router-dom"
 import Atropos from 'atropos/react';
-import IconInfoCircle from '../Icons/IconInfoCircle/IconInfoCircle';
+import { IconInfoCircle } from "../Icons/Icons";
 import '../../../node_modules/atropos/atropos.css'
 
 const CityCard = ({_id, name, coverURL}) => {

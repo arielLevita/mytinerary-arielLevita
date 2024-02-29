@@ -2,10 +2,16 @@ import Carousel from '../Carousel/Carousel';
 
 const Destinations = () => {
     return (
-        <section id='destinations'>
-            <h2 className='pt-5 text-center text-2xl md:text-4xl font-semibold'>Popular Mytineraries</h2>
-            <p className='text-center font-semibold text-indigo-700 mb-6'>Find you perfect destination</p>
-            <Carousel />
+        <section className='pb-24' id='destinations'>
+            <div className="wrapper">
+                <div className='px-4'>
+                    <div className=''>
+                        <h2 className='pt-5 text-2xl md:text-4xl font-semibold mb-2'>Popular Mytineraries</h2>
+                        <p className='font-semibold text-indigo-700 mb-4'>Find you perfect destination</p>
+                    </div>
+                    <Carousel />
+                </div>
+            </div>
         </section>
     )
 }

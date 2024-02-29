@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getItineraryById } from "../store/actions/itineraryActions.js";
-// import IconHeart from "../Icons/IconHeart/IconHeart.jsx";
+// import { IconHeart } from "../Icons/Icons";
 import ItineraryPrice from "../components/ItineraryPrice/ItineraryPrice.jsx";
 import HandleNotFound from "../components/HandleNotFound/HandleNotFound.jsx";
 import GoBackButton from "../components/GoBackButton/GoBackButton.jsx";

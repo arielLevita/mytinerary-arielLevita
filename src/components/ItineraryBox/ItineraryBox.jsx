@@ -1,5 +1,5 @@
 import { Link as Anchor } from "react-router-dom"
-import IconHeart from "../Icons/IconHeart/IconHeart"
+import { IconHeart } from "../Icons/Icons";
 import ItineraryPrice from "../ItineraryPrice/ItineraryPrice"
 
 const ItineraryBox = ({_id, name, coverURL, duration, price, likes, userName, userPhoto}) => {

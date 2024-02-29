@@ -23,6 +23,8 @@ const citiesDetails = () => {
         dispatch(getItinerariesByCityId(id));
     }, [dispatch, id]);
 
+    // TODO agregar iframes con el mapa de la ciudad. Cargar la data en la base de datos.
+
     return (
         <div className="w-full min-h-screen flex flex-col items-center bg-blue-100 mt-12">
             <div className='w-full h-72 bg-cover bg-center bg-no-repeat flex justify-center items-center relative' style={{backgroundImage: `url(${city?.coverURL})`}} >

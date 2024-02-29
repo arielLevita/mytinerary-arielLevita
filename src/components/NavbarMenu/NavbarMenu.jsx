@@ -31,8 +31,8 @@ const NavbarMenu = () => {
             <div className="user-avatar">
                 {
                     user
-                        ? <Anchor onClick={handleLogout} to={'/'} className=" bg-gradient-to-r from-purple-500 bg-purple-400 shadow-slate-400 mx-2 px-3 py-1 text-sm shadow-sm font-medium tracking-wider  text-white rounded-full hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700">Logout</Anchor>
-                        : <Anchor to='/signin' className=" bg-gradient-to-r from-purple-500 bg-purple-400 shadow-slate-400 mx-2 px-3 py-1 text-sm shadow-sm font-medium tracking-wider  text-white rounded-full hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700">SignIn</Anchor>
+                        ? <Anchor onClick={handleLogout} to={'/'} className=" bg-gradient-to-br from-purple-600 bg-purple-500 shadow-slate-400 mx-2 px-3 py-1 text-sm shadow-sm font-medium tracking-wider  text-white rounded-full hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700 border border-opacity-20 border-white">Logout</Anchor>
+                        : <Anchor to='/signin' className=" bg-gradient-to-br from-purple-600 bg-purple-500 shadow-slate-400 mx-2 px-3 py-1 text-sm shadow-sm font-medium tracking-wider  text-white rounded-full hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700 border border-opacity-20 border-white">SignIn</Anchor>
                 }
                 <img className='h-8 bg-white rounded-full mx-2 aspect-square' src={user ? user.photo : defaultPhoto} alt="blank avatar" />
             </div>

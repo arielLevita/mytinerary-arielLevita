@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getItineraryById } from "../../store/actions/itineraryActions.js";
 import axios from 'axios';
 import apiUrl from '../../api.js';
-import IconHeart from '../Icons/IconHeart/IconHeart';
+import { IconHeart } from "../Icons/Icons";
 
 const LikeButton = () => {
 

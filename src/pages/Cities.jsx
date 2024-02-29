@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filter_cities, get_cities } from "../store/actions/cityActions.js";
 import CityCard from "../components/CityCard/CityCard.jsx";
-import IconMagnifyingGlass from '../components/Icons/IconMagnifyingGlass/IconMagnifyingGlass';
+import { IconMagnifyingGlass } from '../components/Icons/Icons';
 import HandleNotFound from "../components/HandleNotFound/HandleNotFound.jsx";
 
 const Cities = () => {

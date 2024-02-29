@@ -1,22 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination, A11y, Grid } from 'swiper/modules';
+import { Autoplay, Grid } from 'swiper/modules';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import CarouselLinks from '../CarouselLinks/CarouselLinks';
 import apiUrl from '../../api';
 import 'swiper/css';
-import 'swiper/css/a11y';
 import 'swiper/css/grid';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 const Carousel = () => {
 
-    const [cities, setCities] = useState();
+    const [itineraries, setItineraries] = useState();
 
     useEffect(() => {
-        axios.get(`${apiUrl}/cities`)
-            .then(response => setCities(response.data.cities))
+        axios.get(`${apiUrl}/itineraries`)
+            .then(response => setItineraries(response.data.itineraries))
             .catch(err => console.log(err))
     }, []);
     
@@ -24,7 +20,7 @@ const Carousel = () => {
         <Swiper
             slidesPerView={1}
             slidesPerGroup={1}
-            navigation
+            lazy= 'true'
             breakpoints={{
                 640: {
                     slidesPerView: 2,
@@ -40,17 +36,18 @@ const Carousel = () => {
                 delay: 2500,
                 disableOnInteraction: false,
             }}
-            spaceBetween={0}
-            pagination={{
-                a11y: true,
-                clickable: true,
-            }}
-            modules={[Autoplay, Navigation, A11y, Grid, Pagination]}
-            className="mySwiper w-full h-48"
+            spaceBetween={24}
+            modules={[Autoplay, Grid]}
+            className="h-60 w-full"
         >
-            {cities?.slice(0, 12).map((city) => (
-                <SwiperSlide key={city._id}>
-                    <CarouselLinks name={city.name} coverURL={city.coverURL}/>
+            {itineraries?.sort(() => 0.5 - Math.random()).slice(0, 24).map((itinerary) => (
+                <SwiperSlide key={itinerary._id}>
+                    <img 
+                        src={itinerary.coverURL} 
+                        alt={itinerary.name} 
+                        loading='lazy' 
+                        className='rounded-3xl'
+                    />
                 </SwiperSlide>
             ))}
             

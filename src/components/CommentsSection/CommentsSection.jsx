@@ -3,12 +3,10 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCommentsByItineraryId } from "../../store/actions/commentActions";
 import { get_users } from "../../store/actions/userActions";
-import IconSend from "../Icons/IconSend/IconSend";
+import { IconSend } from "../Icons/Icons";
 import axios from "axios";
 import apiUrl from "../../api";
 
-/* The `CommentsSection` component is a React component that displays a section for users to leave
-comments and displays existing comments. */
 const CommentsSection = () => {
     const { id } = useParams();
     const dispatch = useDispatch();

@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,8 +26,22 @@ body::-webkit-scrollbar-thumb:hover {
     border-width: 1px;
 }
 
+.wrapper {
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+}
+
 .text-shadow {
     text-shadow: 0 0 3px #000;
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+.text-pretty {
+    text-wrap: pretty;
 }
 
 
@@ -72,22 +88,9 @@ nav svg {
 
 /*  --- HERO --- */
 .hero-background {
-    background: url('https://i.postimg.cc/SNGMTM0Z/cover-beach.jpg');
+    background: url('https://i.postimg.cc/vTPsHkQk/cover-beach-webp.webp');
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-
-/* --- CAROUSEL --- */
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    color: #fff;
-}
-
-.swiper-pagination-bullet {
-    border: 2px solid #fff;
-    width: 10px;
-    aspect-ratio: 1/1;
 }
 
 
