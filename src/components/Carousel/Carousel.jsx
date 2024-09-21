@@ -15,43 +15,45 @@ const Carousel = () => {
             .then(response => setItineraries(response.data.itineraries))
             .catch(err => console.log(err))
     }, []);
-    
+
     return (
-        <Swiper
-            slidesPerView={1}
-            slidesPerGroup={1}
-            lazy= 'true'
-            breakpoints={{
-                640: {
-                    slidesPerView: 2,
-                },
-                768: {
-                    slidesPerView: 3,
-                },
-                1024: {
-                    slidesPerView: 4,
-                }
-            }}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-            spaceBetween={24}
-            modules={[Autoplay, Grid]}
-            className="h-60 w-full"
-        >
-            {itineraries?.sort(() => 0.5 - Math.random()).slice(0, 24).map((itinerary) => (
-                <SwiperSlide key={itinerary._id}>
-                    <img 
-                        src={itinerary.coverURL} 
-                        alt={itinerary.name} 
-                        loading='lazy' 
-                        className='rounded-3xl'
-                    />
-                </SwiperSlide>
-            ))}
-            
-        </Swiper>
+        <div>
+            <Swiper
+                slidesPerView={1}
+                slidesPerGroup={1}
+                lazy='true'
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                    }
+                }}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                spaceBetween={24}
+                modules={[Autoplay, Grid]}
+                className="h-60 w-full"
+            >
+                {itineraries?.sort(() => 0.5 - Math.random()).slice(0, 24).map((itinerary) => (
+                    <SwiperSlide key={itinerary._id}>
+                        <img
+                            src={itinerary.coverURL}
+                            alt={itinerary.name}
+                            loading='lazy'
+                            className='rounded-3xl'
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+            <div id='two'></div>
+        </div>
     )
 }
 

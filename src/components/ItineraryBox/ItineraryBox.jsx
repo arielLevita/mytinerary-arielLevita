@@ -25,7 +25,7 @@ const ItineraryBox = ({_id, name, coverURL, duration, price, likes, userName, us
                         <div className="flex flex-col justify-between">
                             <span className="text-xs font-semibold">{userName}</span>
                             <div className="w-24 flex justify-start items-center text-xs py-1">
-                                <span className="mx-2"><IconHeart /></span> {likes.length} Likes
+                                <span className="mx-2"><IconHeart height={'1em'} /></span> {likes.length} Likes
                             </div>
                         </div>
                         <Anchor className="ml-auto text-indigo-800 uppercase text-right font-bold my-auto" to={`/itineraries/${_id}`}>

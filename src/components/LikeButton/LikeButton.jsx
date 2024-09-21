@@ -71,14 +71,14 @@ const LikeButton = () => {
     return (
         <div>
             {user ? (
-                <button className='w-24 flex justify-between items-center border rounded-full shadow-slate-400 border-slate-300 text-xs px-4 py-1' onClick={handleLikeClick} >
-                    <IconHeart liked={liked} />
-                    <span>{likeCounter} likes</span>
+                <button className='w-fit flex justify-between items-center from-purple-400 bg-gradient-to-br to-violet-300 border rounded-full drop-shadow-md hover:bg-slate-500 border-slate-300 text-xs px-3 py-1' onClick={handleLikeClick} >
+                    <IconHeart height={'1.7em'} liked={liked} />
+                    <span className='font-semibold text-lg ml-4'>{likeCounter}</span>
                 </button>
             ) : (
-                <span className='w-24 flex justify-between items-center border rounded-full shadow-slate-400 border-slate-300 text-xs px-4 py-1'>
-                    <IconHeart />
-                    <span>{itinerary.likes ? itinerary.likes.length : 0} likes</span>
+                <span className='w-fit flex justify-between items-center from-purple-400 bg-gradient-to-br to-violet-300 border rounded-full drop-shadow-md hover:bg-slate-500 border-slate-300 text-xs px-3 py-1'>
+                    <IconHeart height={'1.7em'} />
+                    <span className='font-semibold text-lg ml-4'>{itinerary.likes ? itinerary.likes.length : 0}</span>
                 </span>
             )}
         </div>

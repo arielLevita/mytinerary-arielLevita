@@ -7,11 +7,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar, #comments::-webkit-scrollbar {
     width: 9px;
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, #comments::-webkit-scrollbar-thumb {
     background: linear-gradient(0deg, rgb(167, 111, 167), rgb(92, 61, 92));
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -21,7 +21,7 @@ body::-webkit-scrollbar-thumb {
     border: 3px solid white;
 }
 
-body::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover, #comments::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(0deg, rgb(163, 76, 163), rgb(85, 38, 85));
     border-width: 1px;
 }
