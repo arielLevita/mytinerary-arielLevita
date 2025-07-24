@@ -26,7 +26,7 @@ const citiesDetails = () => {
     // TODO agregar iframes con el mapa de la ciudad. Cargar la data en la base de datos.
 
     return (
-        <div className="w-full min-h-screen flex flex-col items-center bg-blue-100 mt-12">
+        <div className="w-full min-h-screen flex flex-col items-center mt-12">
             <div className='w-full h-72 bg-cover bg-center bg-no-repeat flex justify-center items-center relative' style={{backgroundImage: `url(${city?.coverURL})`}} >
                 <div className='absolute w-full h-full bg-black opacity-20'></div>
                 <div className='absolute w-full h-full flex justify-center items-center text-white text-center font-semibold text-5xl md:text-7xl lg:text-8xl text-shadow'>{city?.name}</div>
@@ -35,7 +35,7 @@ const citiesDetails = () => {
                 {
                     itineraries?.length > 0
                     ? itineraries?.map((itinerary) => (
-                            <ItineraryBox key={itinerary._id} _id={itinerary._id} name={itinerary.name} coverURL={itinerary.coverURL} duration={itinerary.duration} price={itinerary.price} likes={itinerary.likes} userName={itinerary.user?.name} userPhoto={itinerary.user?.photo}/>
+                            <ItineraryBox key={itinerary._id} _id={itinerary._id} name={itinerary.name} coverURLtiny={itinerary.coverURLtiny} duration={itinerary.duration} price={itinerary.price} likes={itinerary.likes} userName={itinerary.user?.name} userPhoto={itinerary.user?.photo}/>
                     ))
                     : <HandleNotFound />
                 }

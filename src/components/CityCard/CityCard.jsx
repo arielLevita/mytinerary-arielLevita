@@ -25,7 +25,7 @@ const CityCard = ({_id, name, coverURL}) => {
 CityCard.propTypes = {
     _id: PropTypes.string,
     name: PropTypes.string.isRequired,
-    coverURL: PropTypes.string.isRequired,
+    coverURLtiny: PropTypes.string.isRequired,
 };
 
 export default CityCard

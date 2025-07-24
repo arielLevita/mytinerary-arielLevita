@@ -2,7 +2,7 @@ import { Link as Anchor } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header>
+        <header className='mb-8 md:mb-16 lg:mb-24'>
             <div className="wrapper">
                 <div className='hero-background relative w-full h-screen'>
                     <div className='absolute h-full w-full bg-black opacity-20'></div>

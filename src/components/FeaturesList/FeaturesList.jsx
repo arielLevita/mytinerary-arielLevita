@@ -61,13 +61,13 @@ const FeaturesList = () => {
     ];
 
     return (
-        <section>
-            <div className='px-4 pb-20'>
-                <h2 className='pt-5 text-2xl md:text-4xl font-semibold mb-2'>Features you'll love</h2>
-                <p className='font-semibold text-pretty text-indigo-700 mb-4'>Discover the world with ease. Whether you're planning a weekend getaway or a month-long adventure, we've got you covered.</p>
-                <div className="flex flex-wrap gap-3">
+        <section className='mb-8 md:mb-16 lg:mb-24'>
+            <div className='px-4'>
+                <h2 className='text-2xl md:text-4xl text-center font-semibold mb-2'>Features you'll love</h2>
+                <p className='font-semibold text-pretty text-center text-indigo-700 mb-6'>Discover the world with ease. Whether you're planning a weekend getaway or a month-long adventure, we've got you covered.</p>
+                <div className="flex flex-wrap justify-center gap-3">
                     {features.map((feature, index) => (
-                        <div key={index} className="border border-gray-300 p-4 w-56 h-36 rounded-lg shadow">
+                        <div key={index} className="border border-gray-300 bg-white p-4 w-56 h-36 rounded-lg shadow">
                             <div className="h-6 w-6 mb-2">
                                 <feature.icon />
                             </div>

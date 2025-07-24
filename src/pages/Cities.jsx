@@ -24,7 +24,7 @@ const Cities = () => {
 
     return (
         <div>
-            <div className="w-full flex flex-col justify-center items-center bg-blue-100 mt-12">
+            <div className="w-full flex flex-col justify-center items-center mt-12">
                 <div id="citiesCards">
                     <div className="flex items-center justify-center my-4">
                         <div className="flex items-center max-w-md mx-auto bg-white border border-gray-300 rounded-lg">

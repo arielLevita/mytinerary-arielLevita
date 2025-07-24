@@ -2,7 +2,7 @@ import { Link as Anchor } from "react-router-dom";
 
 const CallToSignUp = () => {
     return (
-        <section className="px-4 py-20">
+        <section  className='mb-8 md:mb-16 lg:mb-24 px-4'>
             <h2 className="text-center font-bold text-2xl md:text-4xl lg:text-5xl mb-4">Join our community of passionate travelers</h2>
             <p className="text-center text-pretty lg:text-lg w-2/3 mx-auto mb-2">Create an account to start planning your next adventure. Once you sign up, you can like our itineraries, share comments with the community, and more.</p>
             <div className="flex justify-center">

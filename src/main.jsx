@@ -6,6 +6,8 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <App />
+    <div className='bg-blue-50'>
+      <App />
+    </div>
   </Provider>,
 )
