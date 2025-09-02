@@ -96,12 +96,17 @@ import 'swiper/css/grid';
 const Carousel = () => {
 
     const [itineraries, setItineraries] = useState();
+    const [loadedImages, setLoadedImages] = useState({});
 
     useEffect(() => {
         axios.get(`${apiUrl}/itineraries`)
-            .then(response => setItineraries(response.data.itineraries.sort(() => 0.5 - Math.random()).slice(0, 24)))
+            .then(response => setItineraries(response.data.itineraries.sort(() => 0.5 - Math.random()).slice(0, 12)))
             .catch(err => console.log(err))
     }, []);
+
+    const handleImageLoad = (id) => {
+        setLoadedImages(prev => ({ ...prev, [id]: true }));
+    };
 
     return (
         <div>
@@ -135,12 +140,25 @@ const Carousel = () => {
             >
                 {itineraries?.map((itinerary) => (
                     <SwiperSlide key={itinerary._id}>
-                        <img
-                            src={itinerary.coverURLtiny}
-                            alt={itinerary.name}
-                            loading='lazy'
-                            className='rounded-3xl'
-                        />
+                        <div className="relative h-full w-full rounded-3xl overflow-hidden">
+                            {/* Image Placeholder (shows while loading) */}
+                            {!loadedImages[itinerary._id] && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse">
+                                    <div className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                                </div>
+                            )}
+                            
+                            {/* Actual Image */}
+                            <img
+                                src={itinerary.coverURLtiny}
+                                alt={itinerary.name}
+                                loading='lazy'
+                                className={`rounded-3xl w-full h-full object-cover transition-opacity duration-300 ${
+                                    loadedImages[itinerary._id] ? 'opacity-100' : 'opacity-0'
+                                }`}
+                                onLoad={() => handleImageLoad(itinerary._id)}
+                            />
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
