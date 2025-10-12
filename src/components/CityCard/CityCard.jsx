@@ -1,23 +1,21 @@
 import PropTypes from 'prop-types';
 import { Link as Anchor } from "react-router-dom"
-import Atropos from 'atropos/react';
-import { IconInfoCircle } from "../Icons/Icons";
 import '../../../node_modules/atropos/atropos.css'
 
-const CityCard = ({_id, name, coverURL}) => {
+const CityCard = ({ _id, name, coverURL, description }) => {
     return (
-        <div className='hover:shadow-2xl'>
-            <Atropos
-                shadow={false}
-            >
-                <img src={coverURL} alt={name} className='relative' data-atropos-offset="0" />
-                <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center' data-atropos-offset="2">
-                    <h4 className='text-white text-shadow text-3xl'>{name}</h4>
+        <div className=''>
+            <div className='flex flex-wrap border border-stone-400 hover:shadow-lg rounded-lg p-2'>
+                <div className='w-full lg:w-4/12 bg-cover bg-center h-56 rounded-lg' style={{ backgroundImage: `url(${coverURL})` }}></div>
+                <div className='flex flex-col w-full lg:w-8/12 px-2'>
+                    <h3 className='font-bold text-lg'>{name}</h3>
+                    <p className='grow text-sm'>{description}</p>
+                    <Anchor key={_id} to={`/cities/${_id}`}>
+                        <button className='mt-4 h-8 text-white rounded-lg bg-gradient-to-r from-purple-500 bg-purple-400 hover:shadow-2xl hover:bg-purple-700 hover:from-purple-700 w-full'>More INFO</button>
+                    </Anchor>
                 </div>
-                <Anchor className="absolute bottom-2 right-2 bg-gradient-to-r from-purple-500 bg-purple-400 text-sm text-center font-medium tracking-wider  text-white rounded-md shadow-lg hover:bg-purple-700 p-2 font-mono" key={_id} to={`/cities/${_id}`} data-atropos-offset="4">
-                    <IconInfoCircle />
-                </Anchor>
-            </Atropos>
+
+            </div>
         </div>
     )
 }

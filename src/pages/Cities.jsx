@@ -47,15 +47,16 @@ const Cities = () => {
                         </div>
                     </div>
 
-                    {/* TODO crear tarjeta con mayor cantidad de información para las pantallas de mayor resolución */}
-                    <div className="w-full h-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 p-4">
-                        {
-                            cities?.length > 0
-                            ? cities?.map((city) => (
-                                <CityCard key={city._id} _id={city._id} name={city.name} coverURL={city.coverURL} />
-                            ))
-                            : <HandleNotFound />
-                        }
+                    <div className="wrapper">
+                        <div className="w-full h-auto grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
+                            {
+                                cities?.length > 0
+                                    ? cities?.map((city) => (
+                                        <CityCard key={city._id} _id={city._id} name={city.name} coverURL={city.coverURL} description={city.description} />
+                                    ))
+                                    : <HandleNotFound />
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
